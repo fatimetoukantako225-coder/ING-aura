@@ -1,1822 +1,935 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notre gamme | F&N Haircare</title>
-  <meta name="description"
-        content="Découvrez la gamme F&N : des produits capillaires à l'unité pour les besoins spécifiques de vos cheveux.">
-
-  <style>
-    :root {
-      --violet: #6B4FC8;
-      --violet-fonce: #4B3394;
-      --violet-clair: #EEE9FA;
-      --jaune: #F6D860;
-      --jaune-clair: #FFF6D6;
-      --fond: #F8F6FD;
-      --blanc: #ffffff;
-      --texte: #2E2547;
-      --gris: #6F6985;
-      --bord: #DDD5F3;
-      --ombre: rgba(75, 51, 148, 0.10);
-      --fonce: #2A1B5C;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--fond);
-      color: var(--texte);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    header {
-      background: rgba(255, 255, 255, 0.97);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 18px rgba(0, 0, 0, 0.06);
-      backdrop-filter: blur(8px);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 14px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 29px;
-      font-weight: bold;
-      color: var(--violet);
-      letter-spacing: 2px;
-      line-height: 1;
-    }
-
-    .logo span {
-      display: block;
-      font-size: 9px;
-      letter-spacing: 4px;
-      text-align: center;
-      color: var(--gris);
-      margin-top: 5px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--violet);
-    }
-
-    .nav-btn {
-      background: var(--violet);
-      color: white !important;
-      padding: 10px 18px;
-      border-radius: 30px;
-    }
-
-    .nav-btn:hover {
-      background: var(--violet-fonce);
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       BANNIÈRE
-    ========================= */
-
-    .hero {
-      min-height: 440px;
-      padding: 70px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-
-      background:
-        linear-gradient(rgba(60, 40, 125, 0.76), rgba(75, 51, 148, 0.68)),
-        url("image/cheveux.png")
-        center / cover;
-
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      color: var(--jaune);
-      margin-bottom: 15px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 6vw, 65px);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 17px;
-      color: #F4F0FF;
-    }
-
-    /* =========================
-       BOUTONS
-    ========================= */
-
-    .btn {
-      display: inline-block;
-      padding: 13px 23px;
-      border-radius: 30px;
-      border: none;
-      font-weight: bold;
-      font-size: 14px;
-      transition: 0.3s;
-      text-align: center;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: var(--violet);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--violet-fonce);
-      box-shadow: 0 8px 20px rgba(107, 79, 200, 0.25);
-    }
-
-    .btn-light {
-      background: var(--jaune);
-      color: var(--violet-fonce);
-      margin-top: 28px;
-    }
-
-    .btn-light:hover {
-      background: var(--jaune-clair);
-    }
-
-    /* =========================
-       INTRODUCTION
-    ========================= */
-
-    .intro {
-      max-width: 850px;
-      margin: auto;
-      padding: 70px 20px 35px;
-      text-align: center;
-    }
-
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--violet);
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .intro h2,
-    .section-title h2,
-    .diagnostic h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.25;
-      margin: 12px 0;
-      color: var(--violet-fonce);
-    }
-
-    .intro p {
-      color: var(--gris);
-      font-size: 15px;
-    }
-
-    /* =========================
-       FILTRES
-    ========================= */
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 35px 15px 45px;
-    }
-
-    .filter-btn {
-      background: white;
-      color: var(--violet);
-      border: 1px solid var(--bord);
-      padding: 11px 20px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .filter-btn:hover {
-      background: var(--jaune-clair);
-      border-color: var(--jaune);
-    }
-
-    .filter-btn.active {
-      background: var(--violet);
-      color: white;
-      border-color: var(--violet);
-    }
-
-    /* =========================
-       PRODUITS
-    ========================= */
-
-    .gammes {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 25px 80px;
-    }
-
-    .gammes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 26px;
-    }
-
-    .gamme-card {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px var(--ombre);
-      border: 1px solid var(--bord);
-      display: flex;
-      flex-direction: column;
-      transition: 0.3s;
-    }
-
-    .gamme-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(75, 51, 148, 0.16);
-    }
-
-    .gamme-card.hidden {
-      display: none;
-    }
-
-    .gamme-image {
-      height: 240px;
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(135deg, var(--violet-clair), var(--jaune-clair));
-    }
-
-    .photo-gamme {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform 0.5s;
-    }
-
-    .gamme-card:hover .photo-gamme {
-      transform: scale(1.04);
-    }
-
-    .gamme-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: var(--jaune-clair);
-      color: var(--violet-fonce);
-      border: 1px solid var(--jaune);
-      padding: 7px 13px;
-      border-radius: 25px;
-      font-size: 10px;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-    }
-
-    .gamme-content {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .gamme-content h3 {
-      font-family: Georgia, serif;
-      font-size: 21px;
-      color: var(--violet-fonce);
-      margin-bottom: 10px;
-    }
-
-    .gamme-content > p {
-      color: var(--gris);
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .gamme-footer {
-      margin-top: auto;
-      border-top: 1px solid var(--bord);
-      padding-top: 18px;
-    }
-
-    .gamme-footer .btn {
-      width: 100%;
-    }
-
-    /* =========================
-       SECTION DIAGNOSTIC
-    ========================= */
-
-    .diagnostic {
-      background: linear-gradient(135deg, var(--violet-clair), var(--jaune-clair));
-      padding: 70px 20px;
-      text-align: center;
-    }
-
-    .diagnostic-inner {
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .diagnostic p {
-      color: var(--gris);
-      margin-bottom: 25px;
-    }
-
-    /* =========================
-       ENGAGEMENTS
-    ========================= */
-
-    .engagements {
-      max-width: 1100px;
-      padding: 70px 25px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .engagement-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .engagement {
-      background: white;
-      border: 1px solid var(--bord);
-      border-radius: 15px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .engagement:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px var(--ombre);
-    }
-
-    .engagement .icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .engagement h3 {
-      font-size: 17px;
-      margin-bottom: 10px;
-      color: var(--violet);
-    }
-
-    .engagement p {
-      font-size: 13px;
-      color: var(--gris);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: var(--fonce);
-      color: white;
-      padding: 45px 6% 20px;
-    }
-
-    .footer-content {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    .footer-logo {
-      font-size: 30px;
-      font-weight: bold;
-      color: var(--jaune);
-      margin-bottom: 8px;
-    }
-
-    footer h4 {
-      margin-bottom: 15px;
-      color: var(--jaune);
-    }
-
-    footer p,
-    footer a {
-      font-size: 13px;
-      color: #E4DCF7;
-    }
-
-    footer a {
-      display: block;
-      margin-bottom: 10px;
-      transition: 0.2s;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .copyright {
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding-top: 20px;
-      margin-top: 35px;
-      font-size: 12px;
-      color: #CFC4EE;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 768px) {
-
-      nav {
-        flex-direction: column;
-        gap: 12px;
-        padding: 13px 15px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .nav-links a {
-        font-size: 12px;
-      }
-
-      .nav-btn {
-        padding: 9px 14px;
-      }
-
-      .hero {
-        min-height: 390px;
-        padding: 50px 20px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .gamme-image {
-        height: 220px;
-      }
-
-      .engagement-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .intro {
-        padding-top: 50px;
-      }
-
-      .filters {
-        margin: 30px 10px;
-      }
-
-      .filter-btn {
-        padding: 9px 14px;
-        font-size: 12px;
-      }
-
-      .gammes {
-        padding: 0 15px 55px;
-      }
-
-      .gammes-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gamme-image {
-        height: 230px;
-      }
-
-      .gamme-content {
-        padding: 20px;
-      }
-
-      .diagnostic {
-        padding: 50px 20px;
-      }
-    }
-
-    @media (max-width: 380px) {
-
-      .nav-links {
-        gap: 8px;
-      }
-
-      .nav-links a {
-        font-size: 11px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .gamme-content {
-        padding: 18px;
-      }
-    }
-  </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Notre gamme | ING aura</title>
+ <meta name="description"
+ content="Découvrez la gamme ING aura : des produits capillaires à l'unité pour les besoins spécifiques de vos cheveux.">
+ <style>
+ :root {
+ --violet: #6B4FC8;
+ --violet-fonce: #4B3394;
+ --violet-clair: #EEE9FA;
+ --jaune: #F6D860;
+ --jaune-clair: #FFF6D6;
+ --fond: #F8F6FD;
+ --blanc: #ffffff;
+ --texte: #2E2547;
+ --gris: #6F6985;
+ --bord: #DDD5F3;
+ --ombre: rgba(75, 51, 148, 0.10);
+ --fonce: #2A1B5C;
+ }
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ scroll-behavior: smooth;
+ }
+ body {
+ font-family: Arial, sans-serif;
+ background: var(--fond);
+ color: var(--texte);
+ line-height: 1.6;
+ }
+ a {
+ text-decoration: none;
+ color: inherit;
+ }
+ button {
+ font-family: inherit;
+ cursor: pointer;
+ }
+ /* =========================
+ NAVIGATION
+ ========================= */
+ header {
+ background: rgba(255, 255, 255, 0.97);
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ box-shadow: 0 3px 18px rgba(0, 0, 0, 0.06);
+ backdrop-filter: blur(8px);
+ }
+ nav {
+ max-width: 1200px;
+ margin: auto;
+ padding: 14px 5%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 20px;
+ }
+ .logo {
+ font-size: 29px;
+ font-weight: bold;
+ color: var(--violet);
+ letter-spacing: 2px;
+ line-height: 1;
+ }
+ .logo span {
+ display: block;
+ font-size: 9px;
+ letter-spacing: 4px;
+ text-align: center;
+ color: var(--gris);
+ margin-top: 5px;
+ }
+ .nav-links {
+ display: flex;
+ align-items: center;
+ gap: 25px;
+ }
+ .nav-links a {
+ font-size: 14px;
+ font-weight: 600;
+ transition: 0.3s;
+ }
+ .nav-links a:hover,
+ .nav-links a.active {
+ color: var(--violet);
+ }
+ .nav-btn {
+ background: var(--violet);
+ color: white !important;
+ padding: 10px 18px;
+ border-radius: 30px;
+ }
+ .nav-btn:hover {
+ background: var(--violet-fonce);
+ transform: translateY(-2px);
+ }
+ /* =========================
+ BANNIÈRE
+ ========================= */
+ .hero {
+ min-height: 440px;
+ padding: 70px 6%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ background:
+ linear-gradient(rgba(60, 40, 125, 0.76), rgba(75, 51, 148, 0.68)),
+ url("image/cheveux.png")
+ center / cover;
+ color: white;
+ }
+ .hero-content {
+ max-width: 760px;
+ }
+ .eyebrow {
+ text-transform: uppercase;
+ letter-spacing: 4px;
+ font-size: 12px;
+ font-weight: bold;
+ color: var(--jaune);
+ margin-bottom: 15px;
+ }
+ .hero h1 {
+ font-family: Georgia, serif;
+ font-size: clamp(38px, 6vw, 65px);
+ line-height: 1.15;
+ margin-bottom: 20px;
+ }
+ .hero p {
+ max-width: 650px;
+ margin: auto;
+ font-size: 17px;
+ color: #F4F0FF;
+ }
+ /* =========================
+ BOUTONS
+ ========================= */
+ .btn {
+ display: inline-block;
+ padding: 13px 23px;
+ border-radius: 30px;
+ border: none;
+ font-weight: bold;
+ font-size: 14px;
+ transition: 0.3s;
+ text-align: center;
+ }
+ .btn:hover {
+ transform: translateY(-3px);
+ }
+ .btn-primary {
+ background: var(--violet);
+ color: white;
+ }
+ .btn-primary:hover {
+ background: var(--violet-fonce);
+ box-shadow: 0 8px 20px rgba(107, 79, 200, 0.25);
+ }
+ .btn-light {
+ background: var(--jaune);
+ color: var(--violet-fonce);
+ margin-top: 28px;
+ }
+ .btn-light:hover {
+ background: var(--jaune-clair);
+ }
+ /* =========================
+ INTRODUCTION
+ ========================= */
+ .intro {
+ max-width: 850px;
+ margin: auto;
+ padding: 70px 20px 35px;
+ text-align: center;
+ }
+ .section-label {
+ text-transform: uppercase;
+ letter-spacing: 3px;
+ color: var(--violet);
+ font-size: 12px;
+ font-weight: bold;
+}
+ .intro h2,
+ .section-title h2,
+ .diagnostic h2 {
+ font-family: Georgia, serif;
+ font-size: clamp(28px, 4vw, 40px);
+ line-height: 1.25;
+ margin: 12px 0;
+ color: var(--violet-fonce);
+ }
+ .intro p {
+ color: var(--gris);
+ font-size: 15px;
+ }
+ /* =========================
+ FILTRES
+ ========================= */
+ .filters {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 10px;
+ margin: 35px 15px 45px;
+ }
+ .filter-btn {
+ background: white;
+ color: var(--violet);
+ border: 1px solid var(--bord);
+ padding: 11px 20px;
+ border-radius: 30px;
+ font-size: 14px;
+ font-weight: bold;
+ transition: 0.3s;
+ }
+ .filter-btn:hover {
+ background: var(--jaune-clair);
+ border-color: var(--jaune);
+ }
+ .filter-btn.active {
+ background: var(--violet);
+ color: white;
+ border-color: var(--violet);
+ }
+ /* =========================
+ PRODUITS
+ ========================= */
+ .gammes {
+ max-width: 1200px;
+ margin: auto;
+ padding: 0 25px 80px;
+ }
+ .gammes-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+ gap: 26px;
+ }
+ .gamme-card {
+ background: white;
+ border-radius: 18px;
+ overflow: hidden;
+ box-shadow: 0 8px 30px var(--ombre);
+ border: 1px solid var(--bord);
+ display: flex;
+ flex-direction: column;
+ transition: 0.3s;
+ }
+ .gamme-card:hover {
+ transform: translateY(-6px);
+ box-shadow: 0 15px 35px rgba(75, 51, 148, 0.16);
+ }
+ .gamme-card.hidden {
+ display: none;
+ }
+ .gamme-image {
+ height: 240px;
+ overflow: hidden;
+ position: relative;
+ background: linear-gradient(135deg, var(--violet-clair), var(--jaune-clair));
+ }
+ .photo-gamme {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ object-position: center;
+ display: block;
+ transition: transform 0.5s;
+ }
+ .gamme-card:hover .photo-gamme {
+ transform: scale(1.04);
+ }
+ .gamme-tag {
+ position: absolute;
+ top: 14px;
+ left: 14px;
+ background: var(--jaune-clair);
+ color: var(--violet-fonce);
+ border: 1px solid var(--jaune);
+ padding: 7px 13px;
+ border-radius: 25px;
+ font-size: 10px;
+ font-weight: bold;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+ }
+ .gamme-content {
+ padding: 22px;
+ display: flex;
+ flex-direction: column;
+ flex: 1;
+ }
+ .gamme-content h3 {
+ font-family: Georgia, serif;
+ font-size: 21px;
+ color: var(--violet-fonce);
+ margin-bottom: 10px;
+ }
+ .gamme-content > p {
+ color: var(--gris);
+ font-size: 14px;
+ margin-bottom: 20px;
+ }
+ .gamme-footer {
+ margin-top: auto;
+ border-top: 1px solid var(--bord);
+ padding-top: 18px;
+ }
+ .gamme-footer .btn {
+ width: 100%;
+ }
+ /* =========================
+ SECTION DIAGNOSTIC
+ ========================= */
+ .diagnostic {
+ background: linear-gradient(135deg, var(--violet-clair), var(--jaune-clair));
+ padding: 70px 20px;
+ text-align: center;
+ }
+ .diagnostic-inner {
+ max-width: 750px;
+ margin: auto;
+ }
+ .diagnostic p {
+ color: var(--gris);
+ margin-bottom: 25px;
+ }
+ /* =========================
+ ENGAGEMENTS
+ ========================= */
+ .engagements {
+ max-width: 1100px;
+ padding: 70px 25px;
+ margin: auto;
+ }
+ .section-title {
+ text-align: center;
+ margin-bottom: 40px;
+ }
+ .engagement-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 25px;
+ }
+ .engagement {
+ background: white;
+ border: 1px solid var(--bord);
+ border-radius: 15px;
+ padding: 30px 20px;
+ text-align: center;
+ transition: 0.3s;
+ }
+ .engagement:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 10px 25px var(--ombre);
+ }
+ .engagement .icon {
+ font-size: 35px;
+ margin-bottom: 15px;
+ }
+ .engagement h3 {
+ font-size: 17px;
+ margin-bottom: 10px;
+ color: var(--violet);
+ }
+ .engagement p {
+ font-size: 13px;
+ color: var(--gris);
+ }
+ /* =========================
+ FOOTER
+ ========================= */
+ footer {
+ background: var(--fonce);
+ color: white;
+ padding: 45px 6% 20px;
+ }
+ .footer-content {
+ max-width: 1100px;
+ margin: auto;
+ display: grid;
+ grid-template-columns: 2fr 1fr 1fr;
+ gap: 40px;
+ }
+ .footer-logo {
+ font-size: 30px;
+ font-weight: bold;
+ color: var(--jaune);
+ margin-bottom: 8px;
+ }
+ footer h4 {
+ margin-bottom: 15px;
+ color: var(--jaune);
+ }
+ footer p,
+ footer a {
+ font-size: 13px;
+ color: #E4DCF7;
+ }
+ footer a {
+ display: block;
+ margin-bottom: 10px;
+ transition: 0.2s;
+ }
+ footer a:hover {
+ color: white;
+ }
+ .copyright {
+ text-align: center;
+ border-top: 1px solid rgba(255, 255, 255, 0.12);
+ padding-top: 20px;
+ margin-top: 35px;
+ font-size: 12px;
+ color: #CFC4EE;
+ }
+ /* =========================
+ MOBILE
+ ========================= */
+ @media (max-width: 768px) {
+ nav {
+ flex-direction: column;
+ gap: 12px;
+ padding: 13px 15px;
+ }
+ .nav-links {
+ gap: 12px;
+ flex-wrap: wrap;
+ justify-content: center;
+ }
+ .nav-links a {
+ font-size: 12px;
+ }
+ .nav-btn {
+ padding: 9px 14px;
+ }
+ .hero {
+ min-height: 390px;
+ padding: 50px 20px;
+ }
+ .hero h1 {
+ font-size: 40px;
+ }
+ .hero p {
+ font-size: 15px;
+ }
+ .gamme-image {
+ height: 220px;
+ }
+ .engagement-grid {
+ grid-template-columns: 1fr;
+ }
+ .footer-content {
+ grid-template-columns: 1fr;
+ gap: 25px;
+ }
+ }
+ @media (max-width: 600px) {
+ .intro {
+ padding-top: 50px;
+ }
+ .filters {
+ margin: 30px 10px;
+ }
+ .filter-btn {
+ padding: 9px 14px;
+ font-size: 12px;
+ }
+ .gammes {
+ padding: 0 15px 55px;
+ }
+ .gammes-grid {
+ grid-template-columns: 1fr;
+ }
+ .gamme-image {
+ height: 230px;
+ }
+ .gamme-content {
+ padding: 20px;
+ }
+ .diagnostic {
+ padding: 50px 20px;
+ }
+ }
+ @media (max-width: 380px) {
+ .nav-links {
+ gap: 8px;
+ }
+ .nav-links a {
+ font-size: 11px;
+ }
+ .hero h1 {
+ font-size: 34px;
+ }
+ .gamme-content {
+ padding: 18px;
+ }
+ }
+ </style>
 </head>
-
 <body>
-
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
-  <header>
-    <nav>
-
-      <a href="index.html" class="logo" aria-label="Accueil F&N">
-        F&N
-        <span>HAIRCARE</span>
-      </a>
-
-      <div class="nav-links">
-        <a href="index.html">Accueil</a>
-        <a href="diagnostic.html">Diagnostic</a>
-        <a href="gammes.html" class="active">Notre gamme</a>
-        <a href="#contact" class="nav-btn">Contact</a>
-      </div>
-
-    </nav>
-  </header>
-
-
-  <!-- =========================
-       BANNIÈRE
-  ========================= -->
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-        F&N HAIRCARE
-      </div>
-
-      <h1>
-        Révélez la beauté naturelle de vos cheveux
-      </h1>
-
-      <p>
-        Découvrez la gamme F&N : des soins capillaires
-        à l'unité pensés pour répondre aux besoins
-        spécifiques de vos cheveux.
-      </p>
-
-      <a href="#nos-produits" class="btn btn-light">
-        Découvrir nos produits
-      </a>
-
-    </div>
-
-  </section>
-  <!-- =========================
-       INTRODUCTION
-  ========================= -->
-  <section class="intro" id="nos-produits">
-
-    <div class="section-label">
-      La gamme F&N
-    </div>
-
-    <h2>
-      Chaque cheveu mérite son attention
-    </h2>
-
-    <p>
-      Une gamme unique, des produits à l'unité :
-      choisissez ceux qui répondent à vos besoins spécifiques.
-    </p>
-
-  </section>
-
-
-  <!-- =========================
-       FILTRES
-  ========================= -->
-  <div class="filters">
-
-    <button class="filter-btn active" data-filter="all">
-      Tous les produits
-    </button>
-
-    <button class="filter-btn" data-filter="hydratation">
-      Hydratation
-    </button>
-
-    <button class="filter-btn" data-filter="fortification">
-      Force & Protection
-    </button>
-
-    <button class="filter-btn" data-filter="cuir">
-      Cuir chevelu
-    </button>
-
-    <button class="filter-btn" data-filter="essentielle">
-      Essentiel
-    </button>
-
-  </div>
-
-
-  <!-- =========================
-       PRODUITS
-  ========================= -->
-  <main class="gammes">
-
-    <div class="gammes-grid">
-
-      <!-- HYDRATATION : SHAMPOING -->
-      <article class="gamme-card" data-category="hydratation">
-        <div class="gamme-image">
-          <img
-            src="image/produit-shampoing-hydratant.jpg"
-            alt="Shampoing hydratant F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">HYDRATATION</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Shampoing Hydratant</h3>
-          <p>
-            Nettoie en douceur tout en respectant
-            l'hydratation des cheveux secs.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('le Shampoing Hydratant F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- HYDRATATION : MASQUE -->
-      <article class="gamme-card" data-category="hydratation">
-        <div class="gamme-image">
-          <img
-            src="image/produit-masque-hydratant.jpg"
-            alt="Masque hydratant F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">HYDRATATION</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Masque Hydratant</h3>
-          <p>
-            Un soin intense pour redonner douceur
-            et souplesse aux cheveux secs.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('le Masque Hydratant F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- FORCE & PROTECTION : SÉRUM -->
-      <article class="gamme-card" data-category="fortification">
-        <div class="gamme-image">
-          <img
-            src="image/produit-serum-force.jpg"
-            alt="Sérum Force et Protection F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">FORCE & PROTECTION</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Sérum Force & Protection</h3>
-          <p>
-            Aide à protéger les longueurs et à limiter
-            la casse des cheveux fragilisés.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('le Sérum Force & Protection F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- FORCE & PROTECTION : CRÈME DÉMÊLANTE -->
-      <article class="gamme-card" data-category="fortification">
-        <div class="gamme-image">
-          <img
-            src="image/produit-creme-demelante.jpg"
-            alt="Crème démêlante protectrice F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">FORCE & PROTECTION</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Crème Démêlante Protectrice</h3>
-          <p>
-            Facilite le démêlage en douceur et protège
-            les cheveux fragiles.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('la Crème Démêlante Protectrice F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- CUIR CHEVELU : SHAMPOING -->
-      <article class="gamme-card" data-category="cuir">
-        <div class="gamme-image">
-          <img
-            src="image/produit-shampoing-cuir-chevelu.jpg"
-            alt="Shampoing cuir chevelu F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">CUIR CHEVELU</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Shampoing Cuir Chevelu</h3>
-          <p>
-            Un nettoyage doux pour prendre soin
-            du confort du cuir chevelu.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('le Shampoing Cuir Chevelu F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- CUIR CHEVELU : LOTION -->
-      <article class="gamme-card" data-category="cuir">
-        <div class="gamme-image">
-          <img
-            src="image/produit-lotion-cuir-chevelu.jpg"
-            alt="Lotion cuir chevelu F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">CUIR CHEVELU</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Lotion Cuir Chevelu</h3>
-          <p>
-            Une lotion légère qui accompagne le confort
-            du cuir chevelu au quotidien.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('la Lotion Cuir Chevelu F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- ESSENTIEL : APRÈS-SHAMPOING -->
-      <article class="gamme-card" data-category="essentielle">
-        <div class="gamme-image">
-          <img
-            src="image/produit-apres-shampoing.jpg"
-            alt="Après-shampoing essentiel F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">ENTRETIEN QUOTIDIEN</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Après-shampoing Essentiel</h3>
-          <p>
-            Un soin simple et doux pour entretenir
-            vos cheveux au quotidien.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('l\'Après-shampoing Essentiel F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- ESSENTIEL : CRÈME SANS RINÇAGE -->
-      <article class="gamme-card" data-category="essentielle">
-        <div class="gamme-image">
-          <img
-            src="image/produit-creme-sans-rincage.jpg"
-            alt="Crème sans rinçage essentielle F&N"
-            class="photo-gamme"
-            loading="lazy"
-            onerror="this.style.display='none'">
-          <span class="gamme-tag">ENTRETIEN QUOTIDIEN</span>
-        </div>
-        <div class="gamme-content">
-          <h3>Crème Sans Rinçage</h3>
-          <p>
-            Facile à intégrer dans votre routine pour
-            garder des cheveux souples et bien entretenus.
-          </p>
-          <div class="gamme-footer">
-            <a href="#contact"
-               class="btn btn-primary"
-               onclick="commander('la Crème Sans Rinçage F&N')">
-              Découvrir
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-  </main>
-
-  
-
-   <!-- =========================
-       GAMMES
-  ========================= -->  <main class="gammes"><div class="gammes-grid">
-
-
-  <!-- GAMME HYDRATATION -->
-
-  <article class="gamme-card" data-category="hydratation">
-
-    <div class="gamme-image">
-
-      <img
-        src="image/hydratation.jpg"
-        alt="Gamme F&N Hydratation"
-        class="photo-gamme"
-        loading="lazy">
-
-      <span class="gamme-tag">
-        DOUCEUR & SOUPLESSE
-      </span>
-
-    </div>
-
-    <div class="gamme-content">
-
-      <h3>
-        F&N Hydratation
-      </h3>
-
-      <p>
-        Une routine pensée pour les cheveux secs
-        qui ont besoin de douceur, d'hydratation
-        et de souplesse au quotidien.
-      </p>
-  <ul class="benefits">
-
-        <li>
-          Accompagne l'hydratation des cheveux
-        </li>
-
-        <li>
-          Aide à améliorer la douceur et la souplesse
-        </li>
-
-        <li>
-          Facilite le démêlage et le coiffage
-        </li>
-
-      </ul>
-
-      <div class="gamme-footer">
-
-        <small>
-          Pour cheveux secs ou déshydratés
-        </small>
-
-        <a href="#contact"
-           class="btn btn-primary"
-           onclick="commander('F&N Hydratation')">
-          Découvrir
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- GAMME FORCE & PROTECTION -->
-
-  <article class="gamme-card" data-category="fortification">
-
-    <div class="gamme-image">
-
-      <img
-        src="image/force-protection.jpg"
-        alt="Gamme F&N Force et Protection"
-        class="photo-gamme"
-        loading="lazy">
-
-      <span class="gamme-tag">
-        FORCE & PROTECTION
-      </span>
-
-    </div>
-
-    <div class="gamme-content">
-
-      <h3>
-        F&N Force & Protection
-      </h3>
-
-      <p>
-        Une routine pour accompagner les cheveux
-        fragiles et prendre soin des longueurs.
-      </p>
-
-      <ul class="benefits">
-
-        <li>
-          Accompagne les cheveux fragilisés
-        </li>
-
-        <li>
-          Aide à réduire la casse mécanique
-        </li>
-
-        <li>
-          Favorise un entretien doux des longueurs
-        </li>
-
-      </ul>
-
-      <div class="gamme-footer">
-
-        <small>
-          Pour cheveux fragiles ou cassants
-        </small>
-
-        <a href="#contact"
-           class="btn btn-primary"
-           onclick="commander('F&N Force & Protection')">
-          Découvrir
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- GAMME CUIR CHEVELU -->
-
-  <article class="gamme-card" data-category="cuir">
-
-    <div class="gamme-image">
-
-      <img
-        src="image/cuir-chevelu.jpg"
-        alt="Gamme F&N Cuir Chevelu"
-        class="photo-gamme"
-        loading="lazy">
-
-      <span class="gamme-tag">
-        CONFORT & SOIN
-      </span>
-
-    </div>
-
-    <div class="gamme-content">
-
-      <h3>
-        F&N Cuir Chevelu
-      </h3>
-
-      <p>
-        Une routine douce destinée à prendre soin
-        du cuir chevelu et à accompagner son confort.
-      </p>
-
-      <ul class="benefits">
-
-        <li>
-          Privilégie un nettoyage doux
-        </li>
-
-        <li>
-          Accompagne le confort du cuir chevelu
-        </li>
-
-        <li>
-          Encourage une routine régulière
-        </li>
-
-      </ul>
-
-      <div class="gamme-footer">
-
-        <small>
-          Pour les besoins du cuir chevelu
-        </small>
-
-        <a href="#contact"
-           class="btn btn-primary"
-           onclick="commander('F&N Cuir Chevelu')">
-          Découvrir
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- GAMME ESSENTIELLE -->
-
-  <article class="gamme-card" data-category="essentielle">
-
-    <div class="gamme-image">
-
-      <img
-        src="image/essentielle.jpg"
-        alt="Gamme F&N Essentielle"
-        class="photo-gamme"
-        loading="lazy">
-
-      <span class="gamme-tag">
-        ENTRETIEN QUOTIDIEN
-      </span>
-
-    </div>
-
-    <div class="gamme-content">
-
-      <h3>
-        F&N Essentielle
-      </h3>
-
-      <p>
-        Une routine simple pour entretenir les cheveux
-        au quotidien avec des soins doux et faciles
-        à intégrer dans une routine régulière.
-      </p>
-
-      <ul class="benefits">
-
-        <li>
-          Routine simple et accessible
-        </li>
-
-        <li>
-          Accompagne l'entretien quotidien
-        </li>
-
-        <li>
-          Favorise des gestes capillaires doux
-        </li>
-
-      </ul>
-
-      <div class="gamme-footer">
-
-        <small>
-          Pour l'entretien quotidien
-        </small>
-
-        <a href="#contact"
-           class="btn btn-primary"
-           onclick="commander('F&N Essentielle')">
-          Découvrir
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-</div>
-
-  </main>  <!-- =========================
-       DIAGNOSTIC
-  ========================= -->  <section class="diagnostic"><div class="diagnostic-inner">
-
-  <div class="section-label">
-    Votre routine personnalisée
-  </div>
-
-  <h2>
-    Vous ne savez pas quelle gamme choisir ?
-  </h2>
-
-  <p>
-    Chaque chevelure est différente.
-    Répondez à quelques questions et découvrez
-    la gamme F&N correspondant à vos besoins.
-  </p>
-
-  <a href="diagnostic.html"
-     class="btn btn-primary">
-    Faire mon diagnostic capillaire
-  </a>
-
-</div>
-
-  </section>  <!-- =========================
-       ENGAGEMENTS
-  ========================= -->  <section class="engagements"><div class="section-title">
-
-  <div class="section-label">
-    L'esprit F&N
-  </div>
-
-  <h2>
-    Une attention pour chaque chevelure
-  </h2>
-
-</div>
-
-<div class="engagement-grid">
-
-  <div class="engagement">
-
-    <div class="icon">
-      🌿
-    </div>
-
-    <h3>
-      Des routines adaptées
-    </h3>
-
-    <p>
-      Des conseils qui tiennent compte
-      des besoins de chaque personne.
-    </p>
-
-  </div>
-
-
-  <div class="engagement">
-
-    <div class="icon">
-      💗
-    </div>
-
-    <h3>
-      La beauté naturelle
-    </h3>
-
-    <p>
-      Valoriser les cheveux naturels et encourager
-      un entretien doux et régulier.
-    </p>
-
-  </div>
-
-
-  <div class="engagement">
-
-    <div class="icon">
-      ✨
-    </div>
-
-    <h3>
-      Un accompagnement simple
-    </h3>
-
-    <p>
-      Des conseils accessibles pour mieux comprendre
-      et entretenir ses cheveux.
-    </p>
-
-  </div>
-
-</div>
-
-  </section> 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-  <footer id="contact">
-
-    <div class="footer-content">
-
-      <div>
-        <div class="footer-logo">F&N</div>
-        <p>
-          Haircare — Prenez soin de vos cheveux,
-          naturellement et avec douceur.
-        </p>
-      </div>
-
-      <div>
-        <h4>Navigation</h4>
-        <a href="index.html">Accueil</a>
-        <a href="diagnostic.html">Diagnostic capillaire</a>
-        <a href="gammes.html">Notre gamme</a>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <a href="https://wa.me/22383167062"
-           target="_blank"
-           rel="noopener noreferrer">
-          WhatsApp :
-          +223 83 16 70 62
-        </a>
-        <p>
-          À votre écoute pour vos questions capillaires.
-        </p>
-      </div>
-
-    </div>
-
-    <div class="copyright">
-      © 2026 F&N Haircare — Tous droits réservés.
-    </div>
-
-  </footer>
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-  <script>
-
-    /* =========================
-       FILTRAGE DES PRODUITS
-    ========================= */
-
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const gammeCards = document.querySelectorAll(".gamme-card");
-
-    filterButtons.forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const filter = button.dataset.filter;
-
-        filterButtons.forEach(btn => {
-          btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        gammeCards.forEach(card => {
-
-          if (filter === "all" || card.dataset.category === filter) {
-            card.classList.remove("hidden");
-          } else {
-            card.classList.add("hidden");
-          }
-
-        });
-
-      });
-
-    });
-
-
-    /* =========================
-       WHATSAPP
-    ========================= */
-
-    function commander(nomProduit) {
-
-      const numero = "22383167062";
-
-      const message =
-        "Bonjour F&N, je souhaite avoir des informations sur " +
-        nomProduit +
-        ". Pouvez-vous me renseigner sur le produit et son prix ?";
-
-      const url =
-        "https://wa.me/" +
-        numero +
-        "?text=" +
-        encodeURIComponent(message);
-
-      window.open(url, "_blank");
-
-    }
-    /* =========================
-       FILTRAGE DES GAMMES
-    ========================= */
-
-    const filterButtons =
-      document.querySelectorAll(".filter-btn");
-
-    const gammeCards =
-      document.querySelectorAll(".gamme-card");
-
-
-    filterButtons.forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const filter =
-          button.dataset.filter;
-
-        filterButtons.forEach(btn => {
-          btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-
-        gammeCards.forEach(card => {
-
-          const category =
-            card.dataset.category;
-
-          if (
-            filter === "all" ||
-            category === filter
-          ) {
-
-            card.classList.remove("hidden");
-
-          } else {
-
-            card.classList.add("hidden");
-
-          }
-
-        });
-
-      });
-
-    });
-
-
-    /* =========================
-       WHATSAPP
-    ========================= */
-
-    function commander(nomGamme) {
-
-      const numero =
-        "22383167062";
-
-      const message =
-        "Bonjour F&N, je souhaite avoir des informations sur " +
-        nomGamme +
-        ". Pouvez-vous me renseigner sur les produits et les prix ?";
-
-      const url =
-        "https://wa.me/" +
-        numero +
-        "?text=" +
-        encodeURIComponent(message);
-
-      window.open(url, "_blank");
-
-    }
-
-
-    /* =========================
-       RECOMMANDATION DU DIAGNOSTIC
-    ========================= */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
-
-        let diagnostic = null;
-
-        try {
-
-          diagnostic =
-            JSON.parse(
-              localStorage.getItem("FN_diagnostic")
-            );
-
-        } catch (erreur) {
-
-          diagnostic = null;
-
-        }
-
-
-        const zoneSansDiagnostic =
-          document.getElementById(
-            "diagnosticNonFait"
-          );
-
-        const zoneResultat =
-          document.getElementById(
-            "resultatPersonnalise"
-          );
-
-
-        /* Aucun diagnostic */
-
-        if (
-          !diagnostic ||
-          !diagnostic.gamme
-        ) {
-
-          zoneSansDiagnostic.style.display =
-            "block";
-
-          zoneResultat.style.display =
-            "none";
-
-          return;
-
-        }
-
-
-        /* Diagnostic disponible */
-
-        zoneSansDiagnostic.style.display =
-          "none";
-
-        zoneResultat.style.display =
-          "block";
-
-
-        const gamme =
-          diagnostic.gamme;
-
-
-        document.getElementById(
-          "titrePersonnalise"
-        ).textContent =
-          "Votre routine capillaire personnalisée";
-
-
-        document.getElementById(
-          "textePersonnalise"
-        ).textContent =
-          "D'après vos réponses au diagnostic F&N, " +
-          "voici la gamme recommandée pour vos besoins.";
-
-
-        document.getElementById(
-          "nomGammePersonnalisee"
-        ).textContent =
-          gamme;
-
-
-        document.getElementById(
-          "typePersonnalise"
-        ).textContent =
-          diagnostic.type ||
-          "Non précisé";
-
-document.getElementById(
-          "besoinPersonnalise"
-        ).textContent =
-          diagnostic.besoin ||
-          "Entretien quotidien";
-
-
-        /* =========================
-           DONNÉES DES GAMMES
-        ========================= */
-
-        const recommandations = {
-
-          "F&N Cuir Chevelu": {
-
-            description:
-              "Une routine douce destinée à prendre soin " +
-              "du cuir chevelu.",
-
-            routine: [
-
-              [
-                "Nettoyer",
-                "Utiliser un shampoing adapté au cuir chevelu."
-              ],
-
-              [
-                "Prendre soin",
-                "Privilégier une routine douce et éviter " +
-                "les produits irritants."
-              ],
-
-              [
-                "Observer",
-                "Si les problèmes du cuir chevelu persistent, " +
-                "demander conseil à un professionnel de santé."
-              ]
-
-            ],
-
-            categorie:
-              "cuir"
-
-          },
-
-
-          "F&N Force & Protection": {
-
-            description:
-              "Une routine douce pour protéger les longueurs " +
-              "et accompagner les cheveux fragilisés.",
-
-            routine: [
-
-              [
-                "Nettoyer",
-                "Laver délicatement sans frotter les longueurs."
-              ],
-
-              [
-                "Démêler",
-                "Démêler doucement avec un soin adapté."
-              ],
-
-              [
-                "Protéger",
-                "Éviter les coiffures trop serrées et les " +
-                "manipulations excessives."
-              ]
-
-            ],
-
-            categorie:
-              "fortification"
-
-          },
-
-
-          "F&N Hydratation": {
-
-            description:
-              "Une routine destinée à aider les cheveux secs " +
-              "à conserver leur souplesse.",
-
-            routine: [
-
-              [
-                "Nettoyer",
-                "Utiliser un shampoing doux adapté à vos cheveux."
-              ],
-
-              [
-                "Hydrater",
-                "Appliquer un soin hydratant adapté."
-              ],
-
-              [
-                "Protéger",
-                "Utiliser un soin sans rinçage selon les besoins."
-              ]
-
-            ],
-
-            categorie:
-              "hydratation"
-
-          },
-
-
-          "F&N Essentielle": {
-
-            description:
-              "Une routine simple pour entretenir vos cheveux " +
-              "au quotidien.",
-
-            routine: [
-
-              [
-                "Nettoyer",
-                "Laver selon les besoins de vos cheveux."
-              ],
-
-              [
-                "Entretenir",
-                "Utiliser un après-shampoing adapté."
-              ],
-
-              [
-                "Protéger",
-                "Adopter une routine douce et régulière."
-              ]
-
-            ],
-
-            categorie:
-              "essentielle"
-
-          }
-
-        };
-
-
-        const recommandation =
-          recommandations[gamme];
-
-
-        if (!recommandation) {
-
-          document.getElementById(
-            "descriptionPersonnalisee"
-          ).textContent =
-            "Votre gamme a été enregistrée. " +
-            "Consultez votre diagnostic pour retrouver " +
-            "les conseils détaillés.";
-
-          return;
-
-        }
-
-
-        /* Description */
-
-        document.getElementById(
-          "descriptionPersonnalisee"
-        ).textContent =
-          recommandation.description;
-
-
-        /* =========================
-           ROUTINE
-        ========================= */
-
-        const zoneRoutine =
-          document.getElementById(
-            "routinePersonnalisee"
-          );
-
-        zoneRoutine.innerHTML = "";
-
-
-        recommandation.routine.forEach(
-          function (etape, index) {
-
-            const bloc =
-              document.createElement("div");
-
-            bloc.className =
-              "routine-item";
-
-
-            const titre =
-              document.createElement("strong");
-
-            titre.textContent =
-              (index + 1) +
-              ". " +
-              etape[0];
-
-
-            const texte =
-              document.createElement("p");
-
-            texte.textContent =
-              etape[1];
-
-
-            bloc.appendChild(titre);
-            bloc.appendChild(texte);
-
-            zoneRoutine.appendChild(bloc);
-
-          }
-        );
-
-
-        /* =========================
-           FILTRE AUTOMATIQUE
-        ========================= */
-
-        const filtre =
-          recommandation.categorie;
-
-
-        const boutonFiltre =
-          document.querySelector(
-            '.filter-btn[data-filter="' +
-            filtre +
-            '"]'
-          );
-
-
-        if (boutonFiltre) {
-
-          boutonFiltre.click();
-
-        }
-
-      }
-
-    );
-
-  </script></body></html>
-        
+ <!-- =========================
+ NAVIGATION
+ ========================= -->
+ <header>
+ <nav>
+ <a href="index.html" class="logo" aria-label="Accueil ING aura">
+ ING aura
+ <span>HAIRCARE</span>
+ </a>
+ <div class="nav-links">
+ <a href="index.html">Accueil</a>
+ <a href="diagnostic.html">Diagnostic</a>
+ <a href="gammes.html" class="active">Notre gamme</a>
+ <a href="#contact" class="nav-btn">Contact</a>
+ </div>
+ </nav>
+ </header>
+ <!-- =========================
+ BANNIÈRE
+ ========================= -->
+ <section class="hero">
+ <div class="hero-content">
+ <div class="eyebrow">
+ ING aura HAIRCARE
+ </div>
+ <h1>
+ Révélez la beauté naturelle de vos cheveux
+ </h1>
+ <p>
+ Découvrez la gamme ING aura : des soins capillaires
+ à l'unité pensés pour répondre aux besoins
+ spécifiques de vos cheveux.
+ </p>
+ <a href="#nos-produits" class="btn btn-light">
+ Découvrir nos produits
+ </a>
+ </div>
+ </section>
+ <!-- =========================
+ INTRODUCTION
+ ========================= -->
+ <section class="intro" id="nos-produits">
+ <div class="section-label">
+ La gamme ING aura
+ </div>
+ <h2>
+ Chaque cheveu mérite son attention
+ </h2>
+ <p>
+ Une gamme unique, des produits à l'unité :
+ choisissez ceux qui répondent à vos besoins spécifiques.
+ </p>
+ </section>
+ <!-- =========================
+ FILTRES
+ ========================= -->
+ <div class="filters">
+ <button class="filter-btn active" data-filter="all">
+ Tous les produits
+ </button>
+ <button class="filter-btn" data-filter="hydratation">
+ Hydratation
+ </button>
+ <button class="filter-btn" data-filter="fortification">
+ Force & Protection
+ </button>
+ <button class="filter-btn" data-filter="cuir">
+ Cuir chevelu
+ </button>
+ <button class="filter-btn" data-filter="essentielle">
+ Essentiel
+ </button>
+ </div>
+ <!-- =========================
+ PRODUITS
+ ========================= -->
+ <main class="gammes">
+ <div class="gammes-grid">
+ <!-- HYDRATATION : SHAMPOING -->
+ <article class="gamme-card" data-category="hydratation">
+ <div class="gamme-image">
+ <img
+ src="image/produit-shampoing-hydratant.jpg"
+ alt="Shampoing hydratant ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">HYDRATATION</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Shampoing Hydratant</h3>
+ <p>
+ Nettoie en douceur tout en respectant
+ l'hydratation des cheveux secs.
+ </p>
+ <div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('le Shampoing Hydratant ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ <!-- HYDRATATION : MASQUE -->
+ <article class="gamme-card" data-category="hydratation">
+ <div class="gamme-image">
+ <img
+ src="image/produit-masque-hydratant.jpg"
+ alt="Masque hydratant ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">HYDRATATION</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Masque Hydratant</h3>
+ <p>
+ Un soin intense pour redonner douceur
+ et souplesse aux cheveux secs.
+ </p>
+ <div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('le Masque Hydratant ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ <!-- FORCE & PROTECTION : SÉRUM -->
+ <article class="gamme-card" data-category="fortification">
+ <div class="gamme-image">
+ <img
+ src="image/produit-serum-force.jpg"
+ alt="Sérum Force et Protection ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">FORCE & PROTECTION</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Sérum Force & Protection</h3>
+ <p>
+ Aide à protéger les longueurs et à limiter
+ la casse des cheveux fragilisés.
+ </p>
+ <div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('le Sérum Force & Protection ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ <!-- FORCE & PROTECTION : CRÈME DÉMÊLANTE -->
+ <article class="gamme-card" data-category="fortification">
+ <div class="gamme-image">
+ <img
+ src="image/produit-creme-demelante.jpg"
+ alt="Crème démêlante protectrice ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">FORCE & PROTECTION</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Crème Démêlante Protectrice</h3>
+ <p>
+ Facilite le démêlage en douceur et protège
+ les cheveux fragiles.
+ </p><div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('la Crème Démêlante Protectrice ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ <!-- CUIR CHEVELU : SHAMPOING -->
+ <article class="gamme-card" data-category="cuir">
+ <div class="gamme-image">
+ <img
+ src="image/produit-shampoing-cuir-chevelu.jpg"
+ alt="Shampoing cuir chevelu ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">CUIR CHEVELU</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Shampoing Cuir Chevelu</h3>
+ <p>
+ Un nettoyage doux pour prendre soin
+ du confort du cuir chevelu.
+ </p>
+ <div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('le Shampoing Cuir Chevelu ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ <!-- CUIR CHEVELU : LOTION -->
+ <article class="gamme-card" data-category="cuir">
+ <div class="gamme-image">
+ <img
+ src="image/produit-lotion-cuir-chevelu.jpg"
+ alt="Lotion cuir chevelu ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">CUIR CHEVELU</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Lotion Cuir Chevelu</h3>
+ <p>
+ Une lotion légère qui accompagne le confort
+ du cuir chevelu au quotidien.
+ </p>
+ <div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('la Lotion Cuir Chevelu ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ <!-- ESSENTIEL : APRÈS-SHAMPOING -->
+ <article class="gamme-card" data-category="essentielle">
+ <div class="gamme-image">
+ <img
+ src="image/produit-apres-shampoing.jpg"
+ alt="Après-shampoing essentiel ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">ENTRETIEN QUOTIDIEN</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Après-shampoing Essentiel</h3>
+ <p>
+ Un soin simple et doux pour entretenir
+ vos cheveux au quotidien.
+ </p>
+ <div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('l\'Après-shampoing Essentiel ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ <!-- ESSENTIEL : CRÈME SANS RINÇAGE -->
+ <article class="gamme-card" data-category="essentielle">
+ <div class="gamme-image">
+ <img
+ src="image/produit-creme-sans-rincage.jpg"
+ alt="Crème sans rinçage essentielle ING aura"
+ class="photo-gamme"
+ loading="lazy"
+ onerror="this.style.display='none'">
+ <span class="gamme-tag">ENTRETIEN QUOTIDIEN</span>
+ </div>
+ <div class="gamme-content">
+ <h3>Crème Sans Rinçage</h3>
+ <p>
+ Facile à intégrer dans votre routine pour
+ garder des cheveux souples et bien entretenus.
+ </p>
+ <div class="gamme-footer">
+ <a href="#contact"
+ class="btn btn-primary"
+ onclick="commander('la Crème Sans Rinçage ING aura')">
+ Découvrir
+ </a>
+ </div>
+ </div>
+ </article>
+ </div>
+ </main>
+ <!-- =========================
+ DIAGNOSTIC
+ ========================= -->
+ <section class="diagnostic">
+ <div class="diagnostic-inner">
+ <div class="section-label">
+ Votre routine personnalisée
+ </div>
+ <h2>
+ Vous ne savez pas quels produits choisir ?
+ </h2>
+ <p>
+ Chaque chevelure est différente.
+ Répondez à quelques questions et découvrez
+ votre type de cheveux et les produits adaptés
+ à vos besoins.
+ </p>
+ <a href="diagnostic.html"
+ class="btn btn-primary">
+ Faire mon diagnostic capillaire
+ </a>
+ </div>
+ </section>
+ <!-- =========================
+ ENGAGEMENTS
+ ========================= -->
+ <section class="engagements">
+ <div class="section-title">
+ <div class="section-label">
+ L'esprit ING aura
+ </div>
+ <h2>
+ Une attention pour chaque chevelure
+ </h2>
+ </div>
+ <div class="engagement-grid">
+ <div class="engagement">
+ <div class="icon">■</div>
+ <h3>Des routines adaptées</h3>
+ <p>
+ Des conseils qui tiennent compte
+ des besoins de chaque personne.
+ </p>
+ </div>
+ <div class="engagement">
+ <div class="icon">■</div>
+ <h3>La beauté naturelle</h3>
+ <p>
+ Valoriser les cheveux naturels et encourager
+ un entretien doux et régulier.
+ </p>
+ </div>
+ <div class="engagement">
+ <div class="icon">■</div>
+ <h3>Un accompagnement simple</h3>
+ <p>
+ Des conseils accessibles pour mieux comprendre
+ et entretenir ses cheveux.
+ </p>
+ </div>
+ </div>
+ </section>
+ <!-- =========================
+ FOOTER
+ ========================= -->
+ <footer id="contact">
+ <div class="footer-content">
+ <div>
+ <div class="footer-logo">ING aura</div>
+ <p>
+ Haircare — Prenez soin de vos cheveux,
+ naturellement et avec douceur.
+ </p>
+ </div>
+ <div>
+ <h4>Navigation</h4>
+ <a href="index.html">Accueil</a>
+ <a href="diagnostic.html">Diagnostic capillaire</a>
+ <a href="gammes.html">Notre gamme</a>
+ </div>
+ <div>
+ <h4>Contact</h4>
+ <a href="https://wa.me/22383167062"
+ target="_blank"
+ rel="noopener noreferrer">
+ WhatsApp :
+ +223 83 16 70 62
+ </a>
+ <p>
+ À votre écoute pour vos questions capillaires.
+ </p>
+ </div>
+ </div>
+ <div class="copyright">
+ © 2026 ING aura — Tous droits réservés.
+ </div>
+ </footer>
+ <!-- =========================
+ JAVASCRIPT
+ ========================= -->
+ <script>
+ /* =========================
+ FILTRAGE DES PRODUITS
+ ========================= */
+ const filterButtons = document.querySelectorAll(".filter-btn");
+ const gammeCards = document.querySelectorAll(".gamme-card");
+ filterButtons.forEach(button => {
+ button.addEventListener("click", () => {
+ const filter = button.dataset.filter;
+ filterButtons.forEach(btn => {
+ btn.classList.remove("active");
+ });
+ button.classList.add("active");
+ gammeCards.forEach(card => {
+ if (filter === "all" || card.dataset.category === filter) {
+ card.classList.remove("hidden");
+ } else {
+ card.classList.add("hidden");
+ }
+ });
+ });
+ });
+ /* =========================
+ WHATSAPP
+ ========================= */
+ function commander(nomProduit) {
+ const numero = "22383167062";
+ const message =
+ "Bonjour ING aura, je souhaite avoir des informations sur " +
+ nomProduit +
+ ". Pouvez-vous me renseigner sur le produit et son prix ?";
+ const url =
+ "https://wa.me/" +
+ numero +
+ "?text=" +
+ encodeURIComponent(message);
+ window.open(url, "_blank");
+ }
+ </script>
+</body>
+</html>
