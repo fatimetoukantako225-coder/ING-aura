@@ -347,7 +347,8 @@
  /* =========================
  PRODUITS
  ========================= */
- .produits { margin-top: 28px;
+ .produits { margin-top: 28px;
+
  }
  .liste-produits {
  display: grid;
@@ -436,7 +437,8 @@
  padding: 15px;
  margin: 12px 0;
  border-radius: 13px; background: var(--violet-tres-clair);
- transition: 0.2s;
+ transition: 0.2s;
+
  }
  .jour-routine h4 {
  color: var(--violet);
@@ -598,7 +600,8 @@
  L'eau glisse ou perle sur mes cheveux, ils mettent du temps à se mouiller et à sécher
  </label> <label class="option">
  <input type="radio" name="porosite" value="moyenne">
- Ils se mouillent et sèchent normalement
+ Ils se mouillent et sèchent normalement
+
  </label>
  <label class="option">
  <input type="radio" name="porosite" value="forte">
@@ -673,7 +676,8 @@
  Quel problème rencontrez-vous le plus ?
  </h3>
  <label class="option"> <input type="radio" name="probleme" value="pellicules">
- Pellicules
+ Pellicules
+
  </label>
  <label class="option">
  <input type="radio" name="probleme" value="chute">
@@ -821,7 +825,8 @@
  type="button"
  class="bouton-secondaire"
  onclick="refaireDiagnostic()"
- > &#x1F504; Refaire mon diagnostic
+ > &#x1F504; Refaire mon diagnostic
+
  </button>
  </div>
  </section>
@@ -901,7 +906,8 @@ const programmes = { "cuir": [
  ["Jeudi", "Laver si nécessaire avec un produit adapté."],
  ["Vendredi", "Laisser le cuir chevelu au repos."],
  ["Samedi", "Entretenir doucement les longueurs."],
- ["Dimanche", "Faire le bilan de la semaine."]
+ ["Dimanche", "Faire le bilan de la semaine."]
+
  ],
  "fortification": [
  ["Lundi", "Démêler doucement et protéger les longueurs."],
@@ -1258,7 +1264,8 @@ function afficherCalendrier(cle) {
  carte.appendChild(titre);
  carte.appendChild(label);
  calendrier.appendChild(carte);
- checkbox.addEventListener(
+ checkbox.addEventListener(
+
  "change", 
  function() {
  carte.classList.toggle(
@@ -1331,7 +1338,8 @@ function faireDiagnostic(defilement) {
  'input[name="probleme"]:checked'
  );
  const frequence =
- document.querySelector( 'input[name="lavage"]:checked'
+ document.querySelector( 'input[name="lavage"]:checked'
+
  );
  /* PHOTO OBLIGATOIRE */
  if (!photoData) {
@@ -1608,7 +1616,8 @@ function faireDiagnostic(defilement) {
  const bouton = document.createElement("button");
  bouton.type =
  "button";
- bouton.textContent =
+ bouton.textContent =
+
  "Commander";
  bouton.addEventListener(
  "click",
@@ -1886,5 +1895,6 @@ window.addEventListener(
  }
 );
 </script>
-</body>
+</body>
+
 </html>
