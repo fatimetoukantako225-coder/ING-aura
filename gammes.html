@@ -1,20 +1,26 @@
-<!DOCTYPE html><html lang="fr"><head>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Nos gammes | F&N Haircare</title><meta name="description"
-content="Découvrez les gammes capillaires F&N adaptées aux différents besoins de vos cheveux.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre gamme | F&N Haircare</title>
+  <meta name="description"
+        content="Découvrez la gamme F&N : des produits capillaires à l'unité pour les besoins spécifiques de vos cheveux.">
 
   <style>
     :root {
-      --rose: #a52a6f;
-      --rose-vif: #c04b91;
-      --rose-clair: #fbeaf3;
-      --fond: #fff8fc;
+      --violet: #6B4FC8;
+      --violet-fonce: #4B3394;
+      --violet-clair: #EEE9FA;
+      --jaune: #F6D860;
+      --jaune-clair: #FFF6D6;
+      --fond: #F8F6FD;
       --blanc: #ffffff;
-      --texte: #382631;
-      --gris: #766b73;
-      --bord: #f0dce8;
-      --ombre: rgba(93, 32, 64, 0.08);
-      --fonce: #351426;
+      --texte: #2E2547;
+      --gris: #6F6985;
+      --bord: #DDD5F3;
+      --ombre: rgba(75, 51, 148, 0.10);
+      --fonce: #2A1B5C;
     }
 
     * {
@@ -70,7 +76,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
     .logo {
       font-size: 29px;
       font-weight: bold;
-      color: var(--rose);
+      color: var(--violet);
       letter-spacing: 2px;
       line-height: 1;
     }
@@ -98,18 +104,18 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--rose);
+      color: var(--violet);
     }
 
     .nav-btn {
-      background: var(--rose);
+      background: var(--violet);
       color: white !important;
       padding: 10px 18px;
       border-radius: 30px;
     }
 
     .nav-btn:hover {
-      background: var(--rose-vif);
+      background: var(--violet-fonce);
       transform: translateY(-2px);
     }
 
@@ -126,7 +132,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       text-align: center;
 
       background:
-        linear-gradient(rgba(69, 21, 45, 0.74), rgba(69, 21, 45, 0.66)),
+        linear-gradient(rgba(60, 40, 125, 0.76), rgba(75, 51, 148, 0.68)),
         url("image/cheveux.png")
         center / cover;
 
@@ -142,7 +148,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       letter-spacing: 4px;
       font-size: 12px;
       font-weight: bold;
-      color: #f7c5df;
+      color: var(--jaune);
       margin-bottom: 15px;
     }
 
@@ -157,7 +163,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       max-width: 650px;
       margin: auto;
       font-size: 17px;
-      color: #fff4fa;
+      color: #F4F0FF;
     }
 
     /* =========================
@@ -180,23 +186,23 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
     }
 
     .btn-primary {
-      background: var(--rose);
+      background: var(--violet);
       color: white;
     }
 
     .btn-primary:hover {
-      background: var(--rose-vif);
-      box-shadow: 0 8px 20px rgba(165, 42, 111, 0.2);
+      background: var(--violet-fonce);
+      box-shadow: 0 8px 20px rgba(107, 79, 200, 0.25);
     }
 
     .btn-light {
-      background: white;
-      color: var(--rose);
+      background: var(--jaune);
+      color: var(--violet-fonce);
       margin-top: 28px;
     }
 
     .btn-light:hover {
-      background: var(--rose-clair);
+      background: var(--jaune-clair);
     }
 
     /* =========================
@@ -210,133 +216,27 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       text-align: center;
     }
 
-    .section-label,
-    .recommandation-label,
-    .petit-label {
+    .section-label {
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--rose);
+      color: var(--violet);
       font-size: 12px;
       font-weight: bold;
     }
 
     .intro h2,
     .section-title h2,
-    .recommandation h2,
     .diagnostic h2 {
       font-family: Georgia, serif;
       font-size: clamp(28px, 4vw, 40px);
       line-height: 1.25;
       margin: 12px 0;
+      color: var(--violet-fonce);
     }
 
     .intro p {
       color: var(--gris);
       font-size: 15px;
-    }
-
-    /* =========================
-       RECOMMANDATION
-    ========================= */
-
-    .recommandation {
-      background: linear-gradient(135deg, #fff0f8, #ffffff);
-      padding: 65px 20px;
-      border-top: 1px solid var(--bord);
-      border-bottom: 1px solid var(--bord);
-    }
-
-    .recommandation-contenu {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .recommandation h2 {
-      color: var(--texte);
-    }
-
-    .recommandation > .recommandation-contenu > p {
-      color: var(--gris);
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .recommandation-carte {
-      background: white;
-      padding: 30px;
-      margin-top: 30px;
-      border-radius: 20px;
-      border: 1px solid var(--bord);
-      box-shadow: 0 12px 35px rgba(165, 42, 111, 0.08);
-      text-align: left;
-    }
-
-    .recommandation-carte h3 {
-      color: var(--rose);
-      font-family: Georgia, serif;
-      font-size: 28px;
-      margin: 12px 0;
-    }
-
-    .recommandation-carte > p {
-      color: var(--gris);
-    }
-
-    .infos-diagnostic {
-      background: var(--fond);
-      padding: 16px;
-      border-radius: 12px;
-      margin: 22px 0;
-    }
-
-    .infos-diagnostic p {
-      margin: 7px 0;
-      color: var(--gris);
-    }
-
-    .infos-diagnostic strong {
-      color: var(--texte);
-    }
-
-    .recommandation-carte h4 {
-      color: var(--rose);
-      margin: 25px 0 10px;
-    }
-
-    .routine-item {
-      padding: 15px;
-      margin: 12px 0;
-      border-left: 4px solid var(--rose-vif);
-      border-radius: 10px;
-      background: var(--fond);
-    }
-
-    .routine-item strong {
-      color: var(--rose);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .routine-item p {
-      color: var(--gris);
-      font-size: 14px;
-    }
-
-    .btn-recommandation {
-      display: inline-block;
-      background: var(--rose);
-      color: white;
-      padding: 13px 22px;
-      border-radius: 30px;
-      margin-top: 20px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn-recommandation:hover {
-      background: var(--rose-vif);
-      transform: translateY(-2px);
     }
 
     /* =========================
@@ -348,12 +248,12 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin: 45px 15px;
+      margin: 35px 15px 45px;
     }
 
     .filter-btn {
       background: white;
-      color: var(--rose);
+      color: var(--violet);
       border: 1px solid var(--bord);
       padding: 11px 20px;
       border-radius: 30px;
@@ -362,15 +262,19 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       transition: 0.3s;
     }
 
-    .filter-btn:hover,
+    .filter-btn:hover {
+      background: var(--jaune-clair);
+      border-color: var(--jaune);
+    }
+
     .filter-btn.active {
-      background: var(--rose);
+      background: var(--violet);
       color: white;
-      border-color: var(--rose);
+      border-color: var(--violet);
     }
 
     /* =========================
-       CARTES GAMMES
+       PRODUITS
     ========================= */
 
     .gammes {
@@ -381,8 +285,8 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
 
     .gammes-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 26px;
     }
 
     .gamme-card {
@@ -391,12 +295,14 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       overflow: hidden;
       box-shadow: 0 8px 30px var(--ombre);
       border: 1px solid var(--bord);
+      display: flex;
+      flex-direction: column;
       transition: 0.3s;
     }
 
     .gamme-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(93, 32, 64, 0.12);
+      box-shadow: 0 15px 35px rgba(75, 51, 148, 0.16);
     }
 
     .gamme-card.hidden {
@@ -404,10 +310,10 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
     }
 
     .gamme-image {
-      height: 290px;
+      height: 240px;
       overflow: hidden;
-      background: white;
       position: relative;
+      background: linear-gradient(135deg, var(--violet-clair), var(--jaune-clair));
     }
 
     .photo-gamme {
@@ -425,25 +331,30 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
 
     .gamme-tag {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      background: white;
-      color: var(--rose);
-      padding: 8px 14px;
+      top: 14px;
+      left: 14px;
+      background: var(--jaune-clair);
+      color: var(--violet-fonce);
+      border: 1px solid var(--jaune);
+      padding: 7px 13px;
       border-radius: 25px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
     }
 
     .gamme-content {
-      padding: 28px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .gamme-content h3 {
       font-family: Georgia, serif;
-      font-size: 27px;
-      margin-bottom: 12px;
+      font-size: 21px;
+      color: var(--violet-fonce);
+      margin-bottom: 10px;
     }
 
     .gamme-content > p {
@@ -452,35 +363,14 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       margin-bottom: 20px;
     }
 
-    .benefits {
-      list-style: none;
-      margin: 20px 0 25px;
-    }
-
-    .benefits li {
-      font-size: 14px;
-      margin: 10px 0;
-    }
-
-    .benefits li::before {
-      content: "✓";
-      color: var(--rose);
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
     .gamme-footer {
+      margin-top: auto;
       border-top: 1px solid var(--bord);
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
+      padding-top: 18px;
     }
 
-    .gamme-footer small {
-      color: var(--gris);
-      font-size: 12px;
+    .gamme-footer .btn {
+      width: 100%;
     }
 
     /* =========================
@@ -488,7 +378,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
     ========================= */
 
     .diagnostic {
-      background: var(--rose-clair);
+      background: linear-gradient(135deg, var(--violet-clair), var(--jaune-clair));
       padding: 70px 20px;
       text-align: center;
     }
@@ -546,6 +436,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
     .engagement h3 {
       font-size: 17px;
       margin-bottom: 10px;
+      color: var(--violet);
     }
 
     .engagement p {
@@ -574,19 +465,19 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
     .footer-logo {
       font-size: 30px;
       font-weight: bold;
-      color: #f7b9d9;
+      color: var(--jaune);
       margin-bottom: 8px;
     }
 
     footer h4 {
       margin-bottom: 15px;
-      color: #f7b9d9;
+      color: var(--jaune);
     }
 
     footer p,
     footer a {
       font-size: 13px;
-      color: #e8d8e1;
+      color: #E4DCF7;
     }
 
     footer a {
@@ -605,7 +496,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
       padding-top: 20px;
       margin-top: 35px;
       font-size: 12px;
-      color: #d7bfcc;
+      color: #CFC4EE;
     }
 
     /* =========================
@@ -647,12 +538,8 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
         font-size: 15px;
       }
 
-      .gammes-grid {
-        grid-template-columns: 1fr;
-      }
-
       .gamme-image {
-        height: 250px;
+        height: 220px;
       }
 
       .engagement-grid {
@@ -671,14 +558,6 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
         padding-top: 50px;
       }
 
-      .recommandation {
-        padding: 45px 15px;
-      }
-
-      .recommandation-carte {
-        padding: 20px;
-      }
-
       .filters {
         margin: 30px 10px;
       }
@@ -692,25 +571,16 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
         padding: 0 15px 55px;
       }
 
+      .gammes-grid {
+        grid-template-columns: 1fr;
+      }
+
       .gamme-image {
-        height: 220px;
+        height: 230px;
       }
 
       .gamme-content {
-        padding: 22px;
-      }
-
-      .gamme-content h3 {
-        font-size: 24px;
-      }
-
-      .gamme-footer {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .gamme-footer .btn {
-        width: 100%;
+        padding: 20px;
       }
 
       .diagnostic {
@@ -736,161 +606,347 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
         padding: 18px;
       }
     }
-  </style></head><body>  <!-- =========================
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
        NAVIGATION
-  ========================= -->  <header>
-    <nav>  <a href="index.html" class="logo" aria-label="Accueil F&N">
-    F&N
-    <span>HAIRCARE</span>
-  </a>
+  ========================= -->
+  <header>
+    <nav>
 
-  <div class="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="diagnostic.html">Diagnostic</a>
-    <a href="gammes.html" class="active">Nos gammes</a>
-    <a href="#contact" class="nav-btn">Contact</a>
-  </div>
+      <a href="index.html" class="logo" aria-label="Accueil F&N">
+        F&N
+        <span>HAIRCARE</span>
+      </a>
 
-</nav>
-
-  </header>  <!-- =========================
-       BANNIÈRE
-  ========================= -->  <section class="hero"><div class="hero-content">
-
-  <div class="eyebrow">
-    F&N HAIRCARE
-  </div>
-
-  <h1>
-    Révélez la beauté naturelle de vos cheveux
-  </h1>
-
-  <p>
-    Découvrez nos gammes de soins capillaires pensées
-    pour accompagner vos cheveux au quotidien.
-    Une routine adaptée commence par une bonne connaissance
-    de vos cheveux.
-  </p>
-
-  <a href="#nos-gammes" class="btn btn-light">
-    Découvrir nos gammes
-  </a>
-
-</div>
-
-  </section>  <!-- =========================
-       INTRODUCTION
-  ========================= -->  <section class="intro" id="nos-gammes"><div class="section-label">
-  Nos soins capillaires
-</div>
-
-<h2>
-  Chaque cheveu mérite son attention
-</h2>
-
-<p>
-  Découvrez les différentes gammes F&N et trouvez
-  celle qui correspond le mieux aux besoins de vos cheveux.
-</p>
-
-  </section>  <!-- =========================
-       RECOMMANDATION PERSONNALISÉE
-  ========================= -->  <section id="gammePersonnalisee" class="recommandation"><div class="recommandation-contenu">
-
-  <span class="recommandation-label">
-    VOTRE DIAGNOSTIC F&N
-  </span>
-
-  <h2 id="titrePersonnalise">
-    Découvrez votre gamme personnalisée
-  </h2>
-
-  <p id="textePersonnalise">
-    Faites votre diagnostic capillaire pour découvrir
-    la gamme correspondant aux besoins de vos cheveux.
-  </p>
-
-
-  <!-- Résultat si diagnostic déjà effectué -->
-
-  <div id="resultatPersonnalise" style="display:none;">
-
-    <div class="recommandation-carte">
-
-      <span class="petit-label">
-        VOTRE GAMME RECOMMANDÉE
-      </span>
-
-      <h3 id="nomGammePersonnalisee"></h3>
-
-      <p id="descriptionPersonnalisee"></p>
-
-      <div class="infos-diagnostic">
-
-        <p>
-          <strong>Type de cheveux :</strong>
-          <span id="typePersonnalise"></span>
-        </p>
-
-        <p>
-          <strong>Besoin identifié :</strong>
-          <span id="besoinPersonnalise"></span>
-        </p>
-
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="diagnostic.html">Diagnostic</a>
+        <a href="gammes.html" class="active">Notre gamme</a>
+        <a href="#contact" class="nav-btn">Contact</a>
       </div>
 
-      <h4>
-        Votre routine conseillée
-      </h4>
+    </nav>
+  </header>
 
-      <div id="routinePersonnalisee"></div>
 
-      <a href="diagnostic.html"
-         class="btn-recommandation">
-        Refaire mon diagnostic
+  <!-- =========================
+       BANNIÈRE
+  ========================= -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        F&N HAIRCARE
+      </div>
+
+      <h1>
+        Révélez la beauté naturelle de vos cheveux
+      </h1>
+
+      <p>
+        Découvrez la gamme F&N : des soins capillaires
+        à l'unité pensés pour répondre aux besoins
+        spécifiques de vos cheveux.
+      </p>
+
+      <a href="#nos-produits" class="btn btn-light">
+        Découvrir nos produits
       </a>
 
     </div>
 
-  </div>
+  </section>
+  <!-- =========================
+       INTRODUCTION
+  ========================= -->
+  <section class="intro" id="nos-produits">
+
+    <div class="section-label">
+      La gamme F&N
+    </div>
+
+    <h2>
+      Chaque cheveu mérite son attention
+    </h2>
+
+    <p>
+      Une gamme unique, des produits à l'unité :
+      choisissez ceux qui répondent à vos besoins spécifiques.
+    </p>
+
+  </section>
 
 
-  <!-- Aucun diagnostic -->
-
-  <div id="diagnosticNonFait">
-
-    <a href="diagnostic.html"
-       class="btn-recommandation">
-      Faire mon diagnostic capillaire
-    </a>
-
-  </div>
-
-</div>
-
-  </section>  <!-- =========================
+  <!-- =========================
        FILTRES
-  ========================= -->  <div class="filters"><button class="filter-btn active" data-filter="all">
-  Toutes les gammes
-</button>
+  ========================= -->
+  <div class="filters">
 
-<button class="filter-btn" data-filter="hydratation">
-  Hydratation
-</button>
+    <button class="filter-btn active" data-filter="all">
+      Tous les produits
+    </button>
 
-<button class="filter-btn" data-filter="fortification">
-  Force & Protection
-</button>
+    <button class="filter-btn" data-filter="hydratation">
+      Hydratation
+    </button>
 
-<button class="filter-btn" data-filter="cuir">
-  Cuir chevelu
-</button>
+    <button class="filter-btn" data-filter="fortification">
+      Force & Protection
+    </button>
 
-<button class="filter-btn" data-filter="essentielle">
-  Essentielle
-</button>
+    <button class="filter-btn" data-filter="cuir">
+      Cuir chevelu
+    </button>
 
-  </div>  <!-- =========================
+    <button class="filter-btn" data-filter="essentielle">
+      Essentiel
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       PRODUITS
+  ========================= -->
+  <main class="gammes">
+
+    <div class="gammes-grid">
+
+      <!-- HYDRATATION : SHAMPOING -->
+      <article class="gamme-card" data-category="hydratation">
+        <div class="gamme-image">
+          <img
+            src="image/produit-shampoing-hydratant.jpg"
+            alt="Shampoing hydratant F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">HYDRATATION</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Shampoing Hydratant</h3>
+          <p>
+            Nettoie en douceur tout en respectant
+            l'hydratation des cheveux secs.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('le Shampoing Hydratant F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- HYDRATATION : MASQUE -->
+      <article class="gamme-card" data-category="hydratation">
+        <div class="gamme-image">
+          <img
+            src="image/produit-masque-hydratant.jpg"
+            alt="Masque hydratant F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">HYDRATATION</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Masque Hydratant</h3>
+          <p>
+            Un soin intense pour redonner douceur
+            et souplesse aux cheveux secs.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('le Masque Hydratant F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- FORCE & PROTECTION : SÉRUM -->
+      <article class="gamme-card" data-category="fortification">
+        <div class="gamme-image">
+          <img
+            src="image/produit-serum-force.jpg"
+            alt="Sérum Force et Protection F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">FORCE & PROTECTION</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Sérum Force & Protection</h3>
+          <p>
+            Aide à protéger les longueurs et à limiter
+            la casse des cheveux fragilisés.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('le Sérum Force & Protection F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- FORCE & PROTECTION : CRÈME DÉMÊLANTE -->
+      <article class="gamme-card" data-category="fortification">
+        <div class="gamme-image">
+          <img
+            src="image/produit-creme-demelante.jpg"
+            alt="Crème démêlante protectrice F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">FORCE & PROTECTION</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Crème Démêlante Protectrice</h3>
+          <p>
+            Facilite le démêlage en douceur et protège
+            les cheveux fragiles.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('la Crème Démêlante Protectrice F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- CUIR CHEVELU : SHAMPOING -->
+      <article class="gamme-card" data-category="cuir">
+        <div class="gamme-image">
+          <img
+            src="image/produit-shampoing-cuir-chevelu.jpg"
+            alt="Shampoing cuir chevelu F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">CUIR CHEVELU</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Shampoing Cuir Chevelu</h3>
+          <p>
+            Un nettoyage doux pour prendre soin
+            du confort du cuir chevelu.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('le Shampoing Cuir Chevelu F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- CUIR CHEVELU : LOTION -->
+      <article class="gamme-card" data-category="cuir">
+        <div class="gamme-image">
+          <img
+            src="image/produit-lotion-cuir-chevelu.jpg"
+            alt="Lotion cuir chevelu F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">CUIR CHEVELU</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Lotion Cuir Chevelu</h3>
+          <p>
+            Une lotion légère qui accompagne le confort
+            du cuir chevelu au quotidien.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('la Lotion Cuir Chevelu F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ESSENTIEL : APRÈS-SHAMPOING -->
+      <article class="gamme-card" data-category="essentielle">
+        <div class="gamme-image">
+          <img
+            src="image/produit-apres-shampoing.jpg"
+            alt="Après-shampoing essentiel F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">ENTRETIEN QUOTIDIEN</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Après-shampoing Essentiel</h3>
+          <p>
+            Un soin simple et doux pour entretenir
+            vos cheveux au quotidien.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('l\'Après-shampoing Essentiel F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ESSENTIEL : CRÈME SANS RINÇAGE -->
+      <article class="gamme-card" data-category="essentielle">
+        <div class="gamme-image">
+          <img
+            src="image/produit-creme-sans-rincage.jpg"
+            alt="Crème sans rinçage essentielle F&N"
+            class="photo-gamme"
+            loading="lazy"
+            onerror="this.style.display='none'">
+          <span class="gamme-tag">ENTRETIEN QUOTIDIEN</span>
+        </div>
+        <div class="gamme-content">
+          <h3>Crème Sans Rinçage</h3>
+          <p>
+            Facile à intégrer dans votre routine pour
+            garder des cheveux souples et bien entretenus.
+          </p>
+          <div class="gamme-footer">
+            <a href="#contact"
+               class="btn btn-primary"
+               onclick="commander('la Crème Sans Rinçage F&N')">
+              Découvrir
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  
+
+   <!-- =========================
        GAMMES
   ========================= -->  <main class="gammes"><div class="gammes-grid">
 
@@ -1249,77 +1305,112 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
 
 </div>
 
-  </section>  <!-- =========================
+  </section> 
+  <!-- =========================
        FOOTER
-  ========================= -->  <footer id="contact"><div class="footer-content">
+  ========================= -->
+  <footer id="contact">
 
-  <div>
+    <div class="footer-content">
 
-    <div class="footer-logo">
-      F&N
+      <div>
+        <div class="footer-logo">F&N</div>
+        <p>
+          Haircare — Prenez soin de vos cheveux,
+          naturellement et avec douceur.
+        </p>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="diagnostic.html">Diagnostic capillaire</a>
+        <a href="gammes.html">Notre gamme</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <a href="https://wa.me/22383167062"
+           target="_blank"
+           rel="noopener noreferrer">
+          WhatsApp :
+          +223 83 16 70 62
+        </a>
+        <p>
+          À votre écoute pour vos questions capillaires.
+        </p>
+      </div>
+
     </div>
 
-    <p>
-      Haircare — Prenez soin de vos cheveux,
-      naturellement et avec douceur.
-    </p>
+    <div class="copyright">
+      © 2026 F&N Haircare — Tous droits réservés.
+    </div>
 
-  </div>
-
-
-  <div>
-
-    <h4>
-      Navigation
-    </h4>
-
-    <a href="index.html">
-      Accueil
-    </a>
-
-    <a href="diagnostic.html">
-      Diagnostic capillaire
-    </a>
-
-    <a href="gammes.html">
-      Nos gammes
-    </a>
-
-  </div>
+  </footer>
 
 
-  <div>
-
-    <h4>
-      Contact
-    </h4>
-
-    <a href="https://wa.me/22383167062"
-       target="_blank"
-       rel="noopener noreferrer">
-
-      WhatsApp :
-      +223 83 16 70 62
-
-    </a>
-
-    <p>
-      À votre écoute pour vos questions capillaires.
-    </p>
-
-  </div>
-
-</div>
-
-
-<div class="copyright">
-  © 2026 F&N Haircare — Tous droits réservés.
-</div>
-
-  </footer>  <!-- =========================
+  <!-- =========================
        JAVASCRIPT
-  ========================= -->  <script>
+  ========================= -->
+  <script>
 
+    /* =========================
+       FILTRAGE DES PRODUITS
+    ========================= */
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const gammeCards = document.querySelectorAll(".gamme-card");
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        gammeCards.forEach(card => {
+
+          if (filter === "all" || card.dataset.category === filter) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    function commander(nomProduit) {
+
+      const numero = "22383167062";
+
+      const message =
+        "Bonjour F&N, je souhaite avoir des informations sur " +
+        nomProduit +
+        ". Pouvez-vous me renseigner sur le produit et son prix ?";
+
+      const url =
+        "https://wa.me/" +
+        numero +
+        "?text=" +
+        encodeURIComponent(message);
+
+      window.open(url, "_blank");
+
+    }
     /* =========================
        FILTRAGE DES GAMMES
     ========================= */
@@ -1486,8 +1577,7 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
           diagnostic.type ||
           "Non précisé";
 
-
-        document.getElementById(
+document.getElementById(
           "besoinPersonnalise"
         ).textContent =
           diagnostic.besoin ||
@@ -1729,3 +1819,4 @@ content="Découvrez les gammes capillaires F&N adaptées aux différents besoins
     );
 
   </script></body></html>
+        
