@@ -84,16 +84,16 @@
  background: var(--jaune);
  border-radius: 5px;
  }
- /* =========================
- CONTENEUR PRINCIPAL
- ========================= */
  .diagnostic {
  width: min(940px, calc(100% - 30px));
  margin: 35px auto;
-padding: 35px;
+ padding: 35px;
  background: var(--blanc);
  border-radius: 24px;
  box-shadow: var(--ombre);
+ /* =========================
+ CONTENEUR PRINCIPAL
+ ========================= */
  }
  h1,
  h2 {
@@ -171,8 +171,7 @@ padding: 35px;
  font-size: 13px;
  color: var(--texte-clair);
  }
- .question-number {
- display: inline-flex;
+ .question-number { display: inline-flex;
  align-items: center;
  justify-content: center;
  width: 30px;
@@ -181,14 +180,14 @@ padding: 35px;
  background: var(--violet);
  color: white;
  border-radius: 50%;
- font-size: 14px;
+ font-si(
  }
  label.option {
  display: block;
  margin: 13px 0;
  padding: 10px 12px;
  border-radius: 10px;
-cursor: pointer;
+ cursor: pointer;
  transition: 0.2s;
  }
  label.option:hover {
@@ -262,10 +261,9 @@ cursor: pointer;
  color: var(--violet-fonce);
  font-size: 13px;
  font-weight: bold;
- }
- .resultat-header {
+ } .resultat-header {
  text-align: center;
- }
+}
  .resultat-photo img {
  width: 180px;
  height: 180px;
@@ -285,7 +283,8 @@ cursor: pointer;
  #descriptionResultat {
  color: var(--texte-clair);
  }
- .note-type { font-size: 12px;
+ .note-type {
+ font-size: 12px;
  color: #888;
  margin-top: 8px;
  }
@@ -348,8 +347,7 @@ cursor: pointer;
  /* =========================
  PRODUITS
  ========================= */
- .produits {
- margin-top: 28px;
+ .produits { margin-top: 28px;
  }
  .liste-produits {
  display: grid;
@@ -382,7 +380,8 @@ cursor: pointer;
  font-size: 17px;
  margin: 14px 0 7px;
  }
- .carte-produit p {color: var(--texte-clair);
+ .carte-produit p {
+ color: var(--texte-clair);
  font-size: 14px;
  }
  .prix {
@@ -436,9 +435,8 @@ cursor: pointer;
  border: 1px solid var(--bordure);
  padding: 15px;
  margin: 12px 0;
- border-radius: 13px;
- background: var(--violet-tres-clair);
- transition: 0.2s;
+ border-radius: 13px; background: var(--violet-tres-clair);
+ transition: 0.2s;
  }
  .jour-routine h4 {
  color: var(--violet);
@@ -479,7 +477,8 @@ cursor: pointer;
  flex-wrap: wrap;
  margin-top: 20px;
  }
- /* =========================MOBILE
+ /* =========================
+ MOBILE
  ========================= */
  @media (max-width: 700px) {
  header {
@@ -520,9 +519,8 @@ cursor: pointer;
  padding: 16px;
  }
  .resultat-photo img {
- width: 145px;
- height: 145px;
- }
+ width: 145px; height: 145px;
+}
  .besoin,
  .gamme,
  .suivi-routine {
@@ -555,7 +553,7 @@ cursor: pointer;
 </head>
 <body>
 <header>
- <div class="logo">ING aura</div>
+ <div class="logo">💜ING aura💜</div>
  <nav>
  <a href="index.html">Accueil</a>
  <a href="diagnostic.html" class="active">Diagnostic</a>
@@ -570,13 +568,14 @@ cursor: pointer;
  </p>
  <!-- PHOTO -->
  <div class="photo">
- <h3>■ Ajoutez une photo de vos cheveux</h3>
+ <h3>&#x1F4F7; Ajoutez une photo de vos cheveux</h3>
  <p style="color:#777; font-size:13px;">
  Cette étape est obligatoire.
  </p>
  <input
  type="file"
- id="photoCheveux" accept="image/*"
+ id="photoCheveux"
+ accept="image/*"
  >
  <img
  id="photoPreview"
@@ -584,7 +583,7 @@ cursor: pointer;
  alt="Aperçu de votre photo"
  >
  <p id="photoInfo" class="photo-info">
- ✓ Photo enregistrée
+ &#x2713; Photo enregistrée
  </p>
  </div>
  <!-- QUESTION 1 : POROSITÉ -->
@@ -597,10 +596,9 @@ cursor: pointer;
  <label class="option">
  <input type="radio" name="porosite" value="faible">
  L'eau glisse ou perle sur mes cheveux, ils mettent du temps à se mouiller et à sécher
- </label>
- <label class="option">
+ </label> <label class="option">
  <input type="radio" name="porosite" value="moyenne">
- Ils se mouillent et sèchent normalement
+ Ils se mouillent et sèchent normalement
  </label>
  <label class="option">
  <input type="radio" name="porosite" value="forte">
@@ -673,9 +671,9 @@ cursor: pointer;
  <h3>
  <span class="question-number">5</span>
  Quel problème rencontrez-vous le plus ?
- </h3> <label class="option">
- <input type="radio" name="probleme" value="pellicules">
- Pellicules
+ </h3>
+ <label class="option"> <input type="radio" name="probleme" value="pellicules">
+ Pellicules
  </label>
  <label class="option">
  <input type="radio" name="probleme" value="chute">
@@ -714,7 +712,7 @@ cursor: pointer;
  type="button"
  onclick="faireDiagnostic(true)"
  >
- Voir mon diagnostic ■
+ Voir mon diagnostic &#x2728;
  </button>
  <!-- =========================
  RESULTAT
@@ -722,7 +720,7 @@ cursor: pointer;
  <section id="resultat" class="resultat">
  <div class="resultat-header">
  <span class="badge-resultat">
- ■ Diagnostic personnalisé
+ &#x2728; Diagnostic personnalisé
  </span>
  <h2>Votre diagnostic ING aura</h2>
  <div class="resultat-photo">
@@ -740,7 +738,7 @@ cursor: pointer;
  </p>
  </div>
  <div class="besoin">
- <h3>■ Votre besoin principal</h3>
+ <h3>&#x1F49C; Votre besoin principal</h3>
  <p
  id="besoinResultat"
  class="besoin-principal"
@@ -748,7 +746,7 @@ cursor: pointer;
  </div>
  <div class="gamme">
  <span class="badge-resultat">
- ■ Votre gamme ING aura
+ &#x1F338; Votre gamme ING aura 
  </span>
  <h2 id="nomGamme"></h2>
  <p
@@ -757,8 +755,8 @@ cursor: pointer;
  ></p>
  <!-- PRODUITS -->
  <div class="produits">
- <h3 style="color:var(--violet-fonce);">
- ■ Vos produits recommandés
+<h3 style="color:var(--violet-fonce);">
+ &#x1F9F4; Vos produits recommandés
  </h3>
  <p id="titreCatalogue"></p>
  <div
@@ -770,13 +768,13 @@ cursor: pointer;
  class="bouton-whatsapp"
  onclick="commanderWhatsApp()"
  >
- ■ Commander sur WhatsApp
+ &#x1F4F2; Commander sur WhatsApp
  </button>
  </div>
  </div>
  <!-- ROUTINE -->
  <h3 class="routine-titre">
- ■ Votre routine conseillée
+ &#x1F33F; Votre routine conseillée
  </h3>
  <div id="routine"></div>
  <!-- SUIVI -->
@@ -785,7 +783,7 @@ cursor: pointer;
  class="suivi-routine"
  style="display:none"
  >
- <h3>■ Mon suivi capillaire ING aura</h3>
+ <h3>&#x1F338; Mon suivi capillaire ING aura</h3>
  <p class="suivi-intro">
  Voici votre programme de soins sur 7 jours.
  Cochez chaque soin lorsque vous l'avez réalisé.
@@ -823,8 +821,7 @@ cursor: pointer;
  type="button"
  class="bouton-secondaire"
  onclick="refaireDiagnostic()"
- >
- ■ Refaire mon diagnostic
+ > &#x1F504; Refaire mon diagnostic
  </button>
  </div>
  </section>
@@ -897,15 +894,14 @@ const catalogue = {
 /* ==========================================
  2. PROGRAMMES 7 JOURS
 ========================================== */
-const programmes = {
- "cuir": [
+const programmes = { "cuir": [
  ["Lundi", "Observer le cuir chevelu et laver doucement si nécessaire."],
  ["Mardi", "Laisser le cuir chevelu au repos."],
  ["Mercredi", "Éviter de gratter et observer les démangeaisons."],
  ["Jeudi", "Laver si nécessaire avec un produit adapté."],
  ["Vendredi", "Laisser le cuir chevelu au repos."],
  ["Samedi", "Entretenir doucement les longueurs."],
- ["Dimanche", "Faire le bilan de la semaine."]
+ ["Dimanche", "Faire le bilan de la semaine."]
  ],
  "fortification": [
  ["Lundi", "Démêler doucement et protéger les longueurs."],
@@ -986,7 +982,7 @@ function deduireTypeCheveux(texture, porosite, densite) {
  } else if (score >= 5) {
  lettre = "C";
  }
- return familles[texture] + lettre;
+ return familles[texture] + lettre; 
 }
 /* ==========================================
  4. PHOTO (enregistrée dans le navigateur)
@@ -1051,7 +1047,7 @@ function reduirePhoto(fichier, callback) {
  callback(e.target.result);
  };
  image.src = e.target.result;
- };
+ }; ING aura • Code source • Page 24
  lecteur.readAsDataURL(fichier);
 }
 document
@@ -1065,7 +1061,7 @@ document
  }
  reduirePhoto(
  fichier,
-function(resultat) {
+ function(resultat) {
  photoData = resultat;
  afficherAperçuPhoto();
  sauvegarderPhoto();
@@ -1120,8 +1116,7 @@ function obtenirCleSuivi() {
  obtenirSemaineActuelle()
  );
 }
-/* ==========================================
- 7. SAUVEGARDE SUIVI
+/* ========================================== 7. SAUVEGARDE SUIVIE 
 ========================================== */
 function sauvegarderSuivi() {
  try {
@@ -1163,7 +1158,7 @@ function mettreAJourProgression() {
  : 0;
  const barre =
  document.getElementById("progressionBarre");
-const texte =
+ const texte =
  document.getElementById("texteProgression");
  if (barre) {
  barre.style.width =
@@ -1194,7 +1189,7 @@ function restaurerSuivi() {
  );
  cases.forEach(
  function(checkbox, index) {
- checkbox.checked =
+checkbox.checked =
  etat[index] === true;
  const carte =
  checkbox.closest(".jour-routine");
@@ -1261,10 +1256,10 @@ function afficherCalendrier(cle) {
  label.appendChild(checkbox);
  label.appendChild(texte);
  carte.appendChild(titre);
-carte.appendChild(label);
+ carte.appendChild(label);
  calendrier.appendChild(carte);
- checkbox.addEventListener(
- "change",
+ checkbox.addEventListener(
+ "change", 
  function() {
  carte.classList.toggle(
  "termine",
@@ -1336,8 +1331,7 @@ function faireDiagnostic(defilement) {
  'input[name="probleme"]:checked'
  );
  const frequence =
- document.querySelector(
- 'input[name="lavage"]:checked'
+ document.querySelector( 'input[name="lavage"]:checked'
  );
  /* PHOTO OBLIGATOIRE */
  if (!photoData) {
@@ -1359,7 +1353,7 @@ function faireDiagnostic(defilement) {
  !texture ||
  !secheresse ||
  !probleme
-) {
+ ) {
  alert(
  "Veuillez répondre aux questions sur la porosité, " +
  "la densité et la texture de vos cheveux, " +
@@ -1411,7 +1405,7 @@ function faireDiagnostic(defilement) {
  ) {
  besoin =
  "Soin du cuir chevelu";
- cleBesoin =
+ cleBesoin = ING aura • Code source • Page 29
  "cuir";
  descriptionGamme =
  "Des produits doux destinés à prendre soin du cuir chevelu.";
@@ -1457,7 +1451,7 @@ function faireDiagnostic(defilement) {
  ];
  }
  /* CHEVEUX SECS */
-else if (
+ else if (
  problemePrincipal === "secs" ||
  besoinSecheresse === "oui"
  ) {
@@ -1483,8 +1477,7 @@ else if (
  ];
  }
  /* ENTRETIEN */
- else {
- besoin =
+ else { besoin =
  "Entretien quotidien";
  cleBesoin =
  "essentielle";
@@ -1504,6 +1497,7 @@ else if (
  "Adopter une routine douce et régulière."
  ]
  ];
+
  }
  /* SAUVEGARDE */
  window.diagnosticData = {
@@ -1548,9 +1542,7 @@ else if (
  "Produits ING aura pour votre besoin : " +
  besoin;
  /* ROUTINE */
- const zoneRoutine =
- document.getElementById(
- "routine"
+ const zoneRoutine = document.getElementById("routine"
  );
  zoneRoutine.innerHTML = "";
  routine.forEach(
@@ -1613,11 +1605,10 @@ else if (
  "prix";
  prix.textContent =
  produit.prix;
- const bouton =
- document.createElement("button");
+ const bouton = document.createElement("button");
  bouton.type =
  "button";
- bouton.textContent =
+ bouton.textContent =
  "Commander";
  bouton.addEventListener(
  "click",
@@ -1652,7 +1643,8 @@ else if (
  const resultat =
  document.getElementById(
  "resultat"
- );resultat.style.display =
+ );
+ resultat.style.display =
  "block";
  if (defilement) {
  setTimeout(
@@ -1677,7 +1669,7 @@ function commanderWhatsApp(
  if (!diagnostic) {
  alert(
  "Veuillez d'abord faire votre diagnostic."
- );
+ ); 
  return;
  }
  let message =
@@ -1816,7 +1808,7 @@ window.addEventListener(
  /* Photo */
  const photoSauvegardee =
  localStorage.getItem(
- "FN_photo"
+ "FN_photo" 
  );
  if (photoSauvegardee) {
  photoData =
@@ -1848,7 +1840,7 @@ window.addEventListener(
  diagnostic.porosite,
  densite:
  diagnostic.densite,
-texture:
+ texture:
  diagnostic.texture,
  secheresse:
  diagnostic.secheresse,
@@ -1885,8 +1877,7 @@ texture:
  document.querySelector('input[name="probleme"]:checked')
  ) {
  faireDiagnostic(false);
- }
- } catch (erreur) {
+ } } catch (erreur) {
  console.error(
  "Erreur de restauration :",
  erreur
@@ -1895,5 +1886,5 @@ texture:
  }
 );
 </script>
-</body>
+</body>
 </html>
