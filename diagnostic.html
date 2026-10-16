@@ -1,20 +1,25 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Diagnostic capillaire - F&N</title>  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic capillaire - F&N</title>
+
+  <style>
     :root {
-      --rose: #a52a6f;
-      --rose-vif: #c04b91;
-      --rose-fonce: #7d2453;
-      --rose-clair: #fff0f8;
-      --rose-tres-clair: #fff8fc;
-      --fond: #fff8fc;
+      --violet: #6B4FC8;
+      --violet-fonce: #4B3394;
+      --violet-clair: #EEE9FA;
+      --violet-tres-clair: #F8F6FD;
+      --jaune: #F6D860;
+      --jaune-clair: #FFF6D6;
+      --fond: #F8F6FD;
       --texte: #333;
       --texte-clair: #666;
-      --bordure: #ead7e5;
+      --bordure: #DDD5F3;
       --blanc: #ffffff;
       --vert: #3c8b54;
-      --ombre: 0 8px 25px rgba(165, 42, 111, 0.10);
+      --ombre: 0 8px 25px rgba(107, 79, 200, 0.12);
     }
 
     * {
@@ -55,7 +60,7 @@
     .logo {
       font-size: 27px;
       font-weight: bold;
-      color: var(--rose);
+      color: var(--violet);
       letter-spacing: 1px;
     }
 
@@ -77,7 +82,7 @@
 
     nav a:hover,
     nav a.active {
-      color: var(--rose);
+      color: var(--violet);
     }
 
     nav a.active::after {
@@ -86,8 +91,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 2px;
-      background: var(--rose);
+      height: 3px;
+      background: var(--jaune);
       border-radius: 5px;
     }
 
@@ -106,7 +111,7 @@
 
     h1,
     h2 {
-      color: var(--rose);
+      color: var(--violet);
     }
 
     h1 {
@@ -133,14 +138,14 @@
     .photo {
       padding: 22px;
       margin-bottom: 30px;
-      background: var(--rose-tres-clair);
-      border: 1px solid var(--bordure);
+      background: var(--jaune-clair);
+      border: 1px solid var(--jaune);
       border-radius: 18px;
       text-align: center;
     }
 
     .photo h3 {
-      color: var(--rose-fonce);
+      color: var(--violet-fonce);
       margin-top: 0;
     }
 
@@ -160,7 +165,15 @@
       margin: 15px auto 0;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--rose-vif);
+      border: 3px solid var(--violet);
+    }
+
+    .photo-info {
+      display: none;
+      margin: 10px 0 0;
+      font-size: 13px;
+      color: var(--vert);
+      font-weight: bold;
     }
 
     /* =========================
@@ -176,8 +189,14 @@
     }
 
     .question h3 {
-      color: var(--rose-fonce);
+      color: var(--violet-fonce);
       margin-top: 0;
+    }
+
+    .question-aide {
+      margin: -6px 0 12px;
+      font-size: 13px;
+      color: var(--texte-clair);
     }
 
     .question-number {
@@ -187,7 +206,7 @@
       width: 30px;
       height: 30px;
       margin-right: 7px;
-      background: var(--rose);
+      background: var(--violet);
       color: white;
       border-radius: 50%;
       font-size: 14px;
@@ -203,73 +222,12 @@
     }
 
     label.option:hover {
-      background: var(--rose-tres-clair);
+      background: var(--jaune-clair);
     }
 
     input[type="radio"] {
       margin-right: 8px;
-      accent-color: var(--rose);
-    }
-
-    /* =========================
-       TYPES DE CHEVEUX
-    ========================= */
-
-    .types-cheveux {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .carte-type {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 11px;
-      background: white;
-      border: 2px solid #eee;
-      border-radius: 16px;
-      cursor: pointer;
-      transition: 0.25s;
-      overflow: hidden;
-    }
-
-    .carte-type input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .carte-type img {
-      width: 100%;
-      height: 125px;
-      object-fit: cover;
-      border-radius: 11px;
-      margin-bottom: 9px;
-      display: block;
-    }
-
-    .carte-type strong {
-      font-size: 21px;
-      color: var(--rose);
-    }
-
-    .carte-type span {
-      font-size: 13px;
-      color: var(--texte-clair);
-      margin-top: 4px;
-    }
-
-    .carte-type:hover,
-    .carte-type:has(input:checked),
-    .carte-type.selectionnee {
-      border-color: var(--rose);
-      background: var(--rose-clair);
-      box-shadow: 0 5px 16px rgba(165, 42, 111, 0.16);
-      transform: translateY(-2px);
+      accent-color: var(--violet);
     }
 
     /* =========================
@@ -280,7 +238,7 @@
     .btn-produit {
       border: 0;
       border-radius: 25px;
-      background: var(--rose-vif);
+      background: var(--violet);
       color: white;
       padding: 12px 22px;
       font-size: 15px;
@@ -291,7 +249,7 @@
 
     button:hover,
     .btn-produit:hover {
-      background: var(--rose);
+      background: var(--violet-fonce);
       transform: translateY(-1px);
     }
 
@@ -314,13 +272,13 @@
 
     .bouton-secondaire {
       background: white;
-      color: var(--rose);
-      border: 1px solid var(--rose);
+      color: var(--violet);
+      border: 1px solid var(--violet);
     }
 
     .bouton-secondaire:hover {
-      background: var(--rose-clair);
-      color: var(--rose);
+      background: var(--jaune-clair);
+      color: var(--violet-fonce);
     }
 
     /* =========================
@@ -331,7 +289,7 @@
       display: none;
       margin-top: 40px;
       padding: 28px;
-      background: linear-gradient(180deg, var(--rose-clair), #fff);
+      background: linear-gradient(180deg, var(--violet-clair), #fff);
       border: 1px solid var(--bordure);
       border-radius: 22px;
     }
@@ -340,10 +298,10 @@
       display: inline-block;
       padding: 6px 14px;
       margin: 0 auto 10px;
-      background: white;
-      border: 1px solid var(--bordure);
+      background: var(--jaune-clair);
+      border: 1px solid var(--jaune);
       border-radius: 30px;
-      color: var(--rose);
+      color: var(--violet-fonce);
       font-size: 13px;
       font-weight: bold;
     }
@@ -358,19 +316,26 @@
       object-fit: cover;
       border-radius: 50%;
       border: 5px solid white;
-      outline: 3px solid var(--rose-vif);
+      outline: 3px solid var(--violet);
       margin: 18px auto;
       display: block;
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
 
     #typeResultat {
-      color: var(--rose-fonce);
+      color: var(--violet-fonce);
+      font-size: 26px;
       margin-bottom: 6px;
     }
 
     #descriptionResultat {
       color: var(--texte-clair);
+    }
+
+    .note-type {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
     }
 
     .besoin,
@@ -387,14 +352,14 @@
     }
 
     .besoin h3 {
-      color: var(--rose);
+      color: var(--violet);
       margin-top: 0;
     }
 
     .besoin-principal {
       font-size: 20px;
       font-weight: bold;
-      color: var(--rose-fonce);
+      color: var(--violet-fonce);
       margin-bottom: 0;
     }
 
@@ -417,7 +382,7 @@
 
     .routine-titre {
       text-align: center;
-      color: var(--rose-fonce);
+      color: var(--violet-fonce);
       margin-top: 30px;
     }
 
@@ -427,12 +392,12 @@
       margin: 12px 0;
       border-radius: 13px;
       text-align: left;
-      border-left: 4px solid var(--rose-vif);
+      border-left: 4px solid var(--jaune);
       box-shadow: 0 3px 10px rgba(0,0,0,0.04);
     }
 
     .etape-routine h4 {
-      color: var(--rose);
+      color: var(--violet);
       margin: 0 0 6px;
     }
 
@@ -457,8 +422,8 @@
     }
 
     .carte-produit {
-      background: var(--rose-tres-clair);
-      border: 1px solid #f0d5e5;
+      background: var(--violet-tres-clair);
+      border: 1px solid var(--bordure);
       border-radius: 17px;
       padding: 16px;
       text-align: center;
@@ -467,7 +432,7 @@
 
     .carte-produit:hover {
       transform: translateY(-4px);
-      box-shadow: 0 7px 20px rgba(0,0,0,0.10);
+      box-shadow: 0 7px 20px rgba(75, 51, 148, 0.14);
     }
 
     .carte-produit img {
@@ -480,7 +445,7 @@
     }
 
     .carte-produit h4 {
-      color: var(--rose);
+      color: var(--violet);
       font-size: 17px;
       margin: 14px 0 7px;
     }
@@ -493,7 +458,7 @@
     .prix {
       font-size: 16px !important;
       font-weight: bold;
-      color: var(--rose) !important;
+      color: var(--violet) !important;
     }
 
     .carte-produit button {
@@ -504,8 +469,7 @@
     /* =========================
        SUIVI 7 JOURS
     ========================= */
-
-    .suivi-routine {
+ .suivi-routine {
       background: white;
       padding: 22px;
       margin: 28px 0;
@@ -516,7 +480,7 @@
 
     .suivi-routine h3 {
       text-align: center;
-      color: var(--rose);
+      color: var(--violet);
       margin-top: 0;
     }
 
@@ -526,7 +490,7 @@
     }
 
     .progression {
-      background: #f2e5ed;
+      background: var(--violet-clair);
       height: 14px;
       border-radius: 20px;
       overflow: hidden;
@@ -536,14 +500,14 @@
     .progression-barre {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--rose), var(--rose-vif));
+      background: linear-gradient(90deg, var(--violet), var(--jaune));
       transition: width 0.3s;
     }
 
     .texte-progression {
       text-align: center;
       font-weight: bold;
-      color: var(--rose);
+      color: var(--violet);
     }
 
     .jour-routine {
@@ -551,12 +515,12 @@
       padding: 15px;
       margin: 12px 0;
       border-radius: 13px;
-      background: #fff9fc;
+      background: var(--violet-tres-clair);
       transition: 0.2s;
     }
 
     .jour-routine h4 {
-      color: var(--rose);
+      color: var(--violet);
       margin: 0 0 10px;
     }
 
@@ -570,7 +534,7 @@
     }
 
     .jour-routine input {
-      accent-color: var(--rose);
+      accent-color: var(--violet);
       margin-top: 3px;
     }
 
@@ -650,29 +614,6 @@
         font-size: 17px;
       }
 
-      .types-cheveux {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 9px;
-      }
-
-      .carte-type {
-        padding: 7px;
-        border-radius: 12px;
-      }
-
-      .carte-type img {
-        height: 95px;
-        border-radius: 8px;
-      }
-
-      .carte-type strong {
-        font-size: 18px;
-      }
-
-      .carte-type span {
-        font-size: 11px;
-      }
-
       .resultat {
         padding: 16px;
       }
@@ -709,18 +650,6 @@
 
     @media (max-width: 380px) {
 
-      .types-cheveux {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .carte-type img {
-        height: 80px;
-      }
-
-      .carte-type span {
-        font-size: 10px;
-      }
-
       nav {
         gap: 9px;
       }
@@ -729,437 +658,482 @@
         font-size: 12px;
       }
     }
-  </style></head><body><header>
-  <div class="logo">F&N</div>  <nav>
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">F&N</div>
+
+  <nav>
     <a href="index.html">Accueil</a>
-    <a href="DIAGNOSTIC.html" class="active">Diagnostic</a>
-    <a href="gammes.html">Nos gammes</a>
+    <a href="diagnostic.html" class="active">Diagnostic</a>
+    <a href="gammes.html">Notre gamme</a>
   </nav>
-</header><main class="diagnostic">  <h1>Diagnostic capillaire F&N</h1>  <p class="intro">
+</header>
+
+<main class="diagnostic">
+
+  <h1>Diagnostic capillaire F&N</h1>
+
+  <p class="intro">
     Répondez à quelques questions pour découvrir les besoins
     de vos cheveux et obtenir une routine F&N adaptée.
-  </p>  <!-- PHOTO -->  <div class="photo"><h3>📷 Ajoutez une photo de vos cheveux</h3>
+  </p>
 
-<p style="color:#777; font-size:13px;">
-  Cette étape est facultative.
-</p>
+  <!-- PHOTO -->
 
-<input
-  type="file"
-  id="photoCheveux"
-  accept="image/*"
->
+  <div class="photo">
 
-<img
-  id="photoPreview"
-  class="photo-preview"
-  alt="Aperçu de votre photo"
->
+    <h3>📷 Ajoutez une photo de vos cheveux</h3>
 
-  </div>  <!-- QUESTION 1 -->  <div class="question"><h3>
-  <span class="question-number">1</span>
-  Quel est votre type de cheveux ?
-</h3>
+    <p style="color:#777; font-size:13px;">
+      Cette étape est obligatoire.
+    </p>
 
-<div class="types-cheveux">
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="1A" required>
-    <img src="image/1A.png" alt="Cheveux type 1A">
-    <strong>1A</strong>
-    <span>Raides, très fins</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="1B">
-    <img src="image/1B.png" alt="Cheveux type 1B">
-    <strong>1B</strong>
-    <span>Raides, un peu de volume</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="1C">
-    <img src="image/1C.png" alt="Cheveux type 1C">
-    <strong>1C</strong>
-    <span>Raides, plus épais</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="2A">
-    <img src="image/2A.png" alt="Cheveux type 2A">
-    <strong>2A</strong>
-    <span>Ondulations légères</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="2B">
-    <img src="image/2B.png" alt="Cheveux type 2B">
-    <strong>2B</strong>
-    <span>Ondulations marquées</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="2C">
-    <img src="image/2C.png" alt="Cheveux type 2C">
-    <strong>2C</strong>
-    <span>Ondulations fortes</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="3A">
-    <img src="image/3A.png" alt="Cheveux type 3A">
-    <strong>3A</strong>
-    <span>Boucles larges</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="3B">
-    <img src="image/3B.png" alt="Cheveux type 3B">
-    <strong>3B</strong>
-    <span>Boucles moyennes</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="3C">
-    <img src="image/3C.png" alt="Cheveux type 3C">
-    <strong>3C</strong>
-    <span>Boucles serrées</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="4A">
-    <img src="image/4A.png" alt="Cheveux type 4A">
-    <strong>4A</strong>
-    <span>Crépus, petites boucles</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="4B">
-    <img src="image/4B.png" alt="Cheveux type 4B">
-    <strong>4B</strong>
-    <span>Crépus, forme en Z</span>
-  </label>
-
-  <label class="carte-type">
-    <input type="radio" name="type" value="4C">
-    <img src="image/4C.png" alt="Cheveux type 4C">
-    <strong>4C</strong>
-    <span>Crépus, très serrés</span>
-  </label>
-
-</div>
-
-  </div>  <!-- QUESTION 2 -->  <div class="question"><h3>
-  <span class="question-number">2</span>
-  Vos cheveux sont-ils souvent secs ?
-</h3>
-
-<label class="option">
-  <input type="radio" name="secheresse" value="oui">
-  Oui
-</label>
-
-<label class="option">
-  <input type="radio" name="secheresse" value="non">
-  Non
-</label>
-
-  </div>  <!-- QUESTION 3 -->  <div class="question"><h3>
-  <span class="question-number">3</span>
-  Quel problème rencontrez-vous le plus ?
-</h3>
-
-<label class="option">
-  <input type="radio" name="probleme" value="pellicules">
-  Pellicules
-</label>
-
-<label class="option">
-  <input type="radio" name="probleme" value="chute">
-  Cheveux qui tombent ou se cassent facilement
-</label>
-
-<label class="option">
-  <input type="radio" name="probleme" value="secs">
-  Cheveux secs
-</label>
-
-<label class="option">
-  <input type="radio" name="probleme" value="aucun">
-  Aucun problème particulier
-</label>
-
-  </div>  <!-- QUESTION 4 -->  <div class="question"><h3>
-  <span class="question-number">4</span>
-  À quelle fréquence lavez-vous vos cheveux ?
-</h3>
-
-<label class="option">
-  <input type="radio" name="lavage" value="souvent">
-  Plusieurs fois par semaine
-</label>
-
-<label class="option">
-  <input type="radio" name="lavage" value="normal">
-  Une fois par semaine
-</label>
-
-<label class="option">
-  <input type="radio" name="lavage" value="rare">
-  Rarement
-</label>
-
-  </div><button
-  class="bouton-principal"
-  type="button"
-  onclick="faireDiagnostic()"
->
-  Voir mon diagnostic ✨
-</button><!-- =========================
-       RESULTAT
-  ========================= -->  <section id="resultat" class="resultat"><div class="resultat-header">
-
-  <span class="badge-resultat">
-    ✨ Diagnostic personnalisé
-  </span>
-
-  <h2>Votre diagnostic F&N</h2>
-
-  <div class="resultat-photo">
-    <img
-      id="photoResultat"
-      src=""
-      alt="Photo sélectionnée"
-      style="display:none"
+    <input
+      type="file"
+      id="photoCheveux"
+      accept="image/*"
     >
+
+    <img
+      id="photoPreview"
+      class="photo-preview"
+      alt="Aperçu de votre photo"
+    >
+
+    <p id="photoInfo" class="photo-info">
+      ✓ Photo enregistrée
+    </p>
+
   </div>
 
-  <h3 id="typeResultat"></h3>
+  <!-- QUESTION 1 : POROSITÉ -->
 
-  <p id="descriptionResultat"></p>
+  <div class="question">
 
-</div>
-
-
-<div class="besoin">
-
-  <h3>💗 Votre besoin principal</h3>
-
-  <p
-    id="besoinResultat"
-    class="besoin-principal"
-  ></p>
-
-</div>
-
-
-<div class="gamme">
-
-  <span class="badge-resultat">
-    🌸 Votre gamme F&N
-  </span>
-
-  <h2 id="nomGamme"></h2>
-
-  <p
-    id="descriptionGamme"
-    class="gamme-description"
-  ></p>
-
-
-  <!-- PRODUITS -->
-
-  <div class="produits">
-
-    <h3 style="color:var(--rose-fonce);">
-      🧴 Découvrez votre gamme
+    <h3>
+      <span class="question-number">1</span>
+      Comment vos cheveux réagissent-ils à l'eau ?
     </h3>
 
-    <p id="titreCatalogue"></p>
+    <p class="question-aide">Porosité</p>
 
-    <div
-      id="listeProduits"
-      class="liste-produits"
-    ></div>
+    <label class="option">
+      <input type="radio" name="porosite" value="faible">
+      L'eau glisse ou perle sur mes cheveux, ils mettent du temps à se mouiller et à sécher
+    </label>
 
-    <button
-      type="button"
-      class="bouton-whatsapp"
-      onclick="commanderWhatsApp()"
-    >
-      📲 Commander sur WhatsApp
-    </button>
+    <label class="option">
+      <input type="radio" name="porosite" value="moyenne">
+      Ils se mouillent et sèchent normalement
+    </label>
+
+    <label class="option">
+      <input type="radio" name="porosite" value="forte">
+      Ils absorbent l'eau très vite mais sèchent très vite aussi et sont souvent secs ou frisottés
+    </label>
 
   </div>
 
-</div>
+  <!-- QUESTION 2 : DENSITÉ -->
 
+  <div class="question">
 
-<!-- ROUTINE -->
+    <h3>
+      <span class="question-number">2</span>
+      Vos cheveux sont-ils fournis ?
+    </h3>
 
-<h3 class="routine-titre">
-  🌿 Votre routine conseillée
-</h3>
+    <p class="question-aide">Densité</p>
+  <label class="option">
+      <input type="radio" name="densite" value="faible">
+      Peu fournis : mon cuir chevelu se voit facilement et ma queue de cheval est fine
+    </label>
 
-<div id="routine"></div>
+    <label class="option">
+      <input type="radio" name="densite" value="moyenne">
+      Moyennement fournis : mon cuir chevelu se voit un peu
+    </label>
 
+    <label class="option">
+      <input type="radio" name="densite" value="forte">
+      Très fournis : mon cuir chevelu se voit à peine et ma queue de cheval est épaisse
+    </label>
 
-
-<!-- SUIVI -->
-
-<section
-  id="suiviRoutine"
-  class="suivi-routine"
-  style="display:none"
->
-
-  <h3>🌸 Mon suivi capillaire F&N</h3>
-
-  <p class="suivi-intro">
-    Voici votre programme de soins sur 7 jours.
-    Cochez chaque soin lorsque vous l'avez réalisé.
-  </p>
-
-  <div class="progression">
-    <div
-      id="progressionBarre"
-      class="progression-barre"
-    ></div>
   </div>
 
-  <p
-    id="texteProgression"
-    class="texte-progression"
-  >
-    0 jour(s) terminé(s) sur 7
-  </p>
+  <!-- QUESTION 3 : TEXTURE -->
 
-  <div id="calendrierRoutine"></div>
+  <div class="question">
 
-  <div style="text-align:center;">
-    <button
-      type="button"
-      class="bouton-secondaire"
-      onclick="reinitialiserSuivi()"
-    >
-      Recommencer ma semaine
-    </button>
+    <h3>
+      <span class="question-number">3</span>
+      Quelle est la forme naturelle de vos cheveux ?
+    </h3>
+
+    <p class="question-aide">
+      Texture : observez vos cheveux après les avoir laissés sécher naturellement, sans produit ni coiffure.
+    </p>
+
+    <label class="option">
+      <input type="radio" name="texture" value="raides">
+      Raides : ils tombent droits, sans aucune boucle
+    </label>
+
+    <label class="option">
+      <input type="radio" name="texture" value="ondules">
+      Ondulés : ils forment des vagues en forme de S
+    </label>
+
+    <label class="option">
+      <input type="radio" name="texture" value="boucles">
+      Bouclés : ils forment des boucles bien dessinées, en spirale
+    </label>
+
+    <label class="option">
+      <input type="radio" name="texture" value="crepus">
+      Crépus : ils forment de petites boucles serrées ou en zigzag, et rétrécissent beaucoup en séchant
+    </label>
+
   </div>
 
-</section>
+  <!-- QUESTION 4 -->
 
+  <div class="question">
 
-<p class="avertissement">
-  Ce résultat est une recommandation indicative basée sur vos réponses.
-  Il ne remplace pas un avis professionnel en cas de problème persistant
-  du cuir chevelu ou de chute importante.
-</p>
+    <h3>
+      <span class="question-number">4</span>
+      Vos cheveux sont-ils souvent secs ?
+    </h3>
 
+    <label class="option">
+      <input type="radio" name="secheresse" value="oui">
+      Oui
+    </label>
 
-<div class="actions-finales">
+    <label class="option">
+      <input type="radio" name="secheresse" value="non">
+      Non
+    </label>
+
+  </div>
+
+  <!-- QUESTION 5 -->
+
+  <div class="question">
+
+    <h3>
+      <span class="question-number">5</span>
+      Quel problème rencontrez-vous le plus ?
+    </h3>
+
+    <label class="option">
+      <input type="radio" name="probleme" value="pellicules">
+      Pellicules
+    </label>
+
+    <label class="option">
+      <input type="radio" name="probleme" value="chute">
+      Cheveux qui tombent ou se cassent facilement
+    </label>
+
+    <label class="option">
+      <input type="radio" name="probleme" value="secs">
+      Cheveux secs
+    </label>
+
+    <label class="option">
+      <input type="radio" name="probleme" value="aucun">
+      Aucun problème particulier
+    </label>
+
+  </div>
+
+  <!-- QUESTION 6 -->
+
+  <div class="question">
+
+    <h3>
+      <span class="question-number">6</span>
+      À quelle fréquence lavez-vous vos cheveux ?
+    </h3>
+
+    <label class="option">
+      <input type="radio" name="lavage" value="souvent">
+      Plusieurs fois par semaine
+    </label>
+
+    <label class="option">
+      <input type="radio" name="lavage" value="normal">
+      Une fois par semaine
+    </label>
+
+    <label class="option">
+      <input type="radio" name="lavage" value="rare">
+      Rarement
+    </label>
+
+  </div>
 
   <button
+    class="bouton-principal"
     type="button"
-    class="bouton-secondaire"
-    onclick="refaireDiagnostic()"
+    onclick="faireDiagnostic(true)"
   >
-    🔄 Refaire mon diagnostic
+    Voir mon diagnostic ✨
   </button>
 
-</div>
+  <!-- =========================
+       RESULTAT
+  ========================= -->
 
-  </section></main><script>
+  <section id="resultat" class="resultat">
+
+    <div class="resultat-header">
+
+      <span class="badge-resultat">
+        ✨ Diagnostic personnalisé
+      </span>
+
+      <h2>Votre diagnostic F&N</h2>
+
+      <div class="resultat-photo">
+        <img
+          id="photoResultat"
+          src=""
+          alt="Photo sélectionnée"
+          style="display:none"
+        >
+      </div>
+
+      <h3 id="typeResultat"></h3>
+
+      <p id="descriptionResultat"></p>
+
+      <p class="note-type">
+        Ce type de cheveux est une estimation déduite de vos réponses.
+      </p>
+
+    </div>
+
+
+    <div class="besoin">
+
+      <h3>💜 Votre besoin principal</h3>
+
+      <p
+        id="besoinResultat"
+        class="besoin-principal"
+      ></p>
+
+    </div>
+
+
+    <div class="gamme">
+
+      <span class="badge-resultat">
+        🌸 Votre gamme F&N
+      </span>
+
+      <h2 id="nomGamme"></h2>
+
+      <p
+        id="descriptionGamme"
+        class="gamme-description"
+      ></p>
+
+
+      <!-- PRODUITS -->
+
+      <div class="produits">
+
+        <h3 style="color:var(--violet-fonce);">
+          🧴 Vos produits recommandés
+        </h3>
+
+        <p id="titreCatalogue"></p>
+
+        <div
+          id="listeProduits"
+          class="liste-produits"
+        ></div>
+
+        <button
+          type="button"
+          class="bouton-whatsapp"
+          onclick="commanderWhatsApp()"
+        >
+          📲 Commander sur WhatsApp
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ROUTINE -->
+
+    <h3 class="routine-titre">
+      🌿 Votre routine conseillée
+    </h3>
+
+    <div id="routine"></div>
+
+
+    <!-- SUIVI -->
+
+    <section
+      id="suiviRoutine"
+      class="suivi-routine"
+      style="display:none"
+    >
+
+      <h3>🌸 Mon suivi capillaire F&N</h3>
+
+      <p class="suivi-intro">
+        Voici votre programme de soins sur 7 jours.
+        Cochez chaque soin lorsque vous l'avez réalisé.
+      </p>
+
+      <div class="progression">
+        <div
+          id="progressionBarre"
+          class="progression-barre"
+        ></div>
+      </div>
+
+      <p
+        id="texteProgression"
+        class="texte-progression"
+      >
+        0 jour(s) terminé(s) sur 7
+      </p>
+
+       <div id="calendrierRoutine"></div>
+
+      <div style="text-align:center;">
+        <button
+          type="button"
+          class="bouton-secondaire"
+          onclick="reinitialiserSuivi()"
+        >
+          Recommencer ma semaine
+        </button>
+      </div>
+
+    </section>
+
+
+    <p class="avertissement">
+      Ce résultat est une recommandation indicative basée sur vos réponses.
+      Il ne remplace pas un avis professionnel en cas de problème persistant
+      du cuir chevelu ou de chute importante.
+    </p>
+
+
+    <div class="actions-finales">
+
+      <button
+        type="button"
+        class="bouton-secondaire"
+        onclick="refaireDiagnostic()"
+      >
+        🔄 Refaire mon diagnostic
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script>
 
 /* ==========================================
    F&N - DIAGNOSTIC CAPILLAIRE
-   VERSION PROFESSIONNELLE
 ========================================== */
 
 
 /* ==========================================
-   1. CATALOGUE
+   1. CATALOGUE (produits à l'unité par besoin)
 ========================================== */
 
 const catalogue = {
 
-  "F&N Hydratation": [
+  "hydratation": [
 
     {
-      nom: "Shampoing doux",
-      description: "Nettoyage doux des cheveux.",
+      nom: "Shampoing Hydratant",
+      description: "Nettoie en douceur tout en respectant l'hydratation des cheveux secs.",
       prix: "5000 FCFA",
-      image: "image/shampoing-hydratation.png"
+      image: "image/produit-shampoing-hydratant.jpg"
     },
 
     {
-      nom: "Masque hydratant",
-      description: "Aide à assouplir les longueurs.",
+      nom: "Masque Hydratant",
+      description: "Un soin intense pour redonner douceur et souplesse aux cheveux secs.",
       prix: "6000 FCFA",
-      image: "image/masque-hydratation.png"
-    },
-
-    {
-      nom: "Soin sans rinçage",
-      description: "Aide à faciliter le démêlage.",
-      prix: "4500 FCFA",
-      image: "image/soin-hydratation.png"
+      image: "image/produit-masque-hydratant.jpg"
     }
 
   ],
 
 
-  "F&N Cuir Chevelu": [
+  "cuir": [
 
     {
-      nom: "Shampoing cuir chevelu",
-      description: "Nettoyage doux du cuir chevelu.",
+      nom: "Shampoing Cuir Chevelu",
+      description: "Un nettoyage doux pour prendre soin du confort du cuir chevelu.",
       prix: "5000 FCFA",
-      image: "image/shampoing-cuir-chevelu.png"
+      image: "image/produit-shampoing-cuir-chevelu.jpg"
     },
 
     {
-      nom: "Soin apaisant",
-      description: "Soin doux pour les longueurs.",
+      nom: "Lotion Cuir Chevelu",
+      description: "Une lotion légère qui accompagne le confort du cuir chevelu au quotidien.",
       prix: "4500 FCFA",
-      image: "image/soin-cuir-chevelu.png"
+      image: "image/produit-lotion-cuir-chevelu.jpg"
     }
 
   ],
 
 
-  "F&N Force & Protection": [
+  "fortification": [
 
     {
-      nom: "Shampoing fortifiant",
-      description: "Nettoyage doux des cheveux.",
-      prix: "5000 FCFA",
-      image: "image/shampoing-force-protection.png"
-    },
-
-    {
-      nom: "Masque protecteur",
-      description: "Aide au démêlage et limite les manipulations.",
+      nom: "Sérum Force & Protection",
+      description: "Aide à protéger les longueurs et à limiter la casse des cheveux fragilisés.",
       prix: "6000 FCFA",
-      image: "image/masque-force-protection.png"
+      image: "image/produit-serum-force.jpg"
+    },
+
+    {
+      nom: "Crème Démêlante Protectrice",
+      description: "Facilite le démêlage en douceur et protège les cheveux fragiles.",
+      prix: "6000 FCFA",
+      image: "image/produit-creme-demelante.jpg"
     }
 
   ],
 
 
-  "F&N Essentielle": [
+  "essentielle": [
 
     {
-      nom: "Shampoing doux",
-      description: "Nettoyage régulier.",
+      nom: "Après-shampoing Essentiel",
+      description: "Un soin simple et doux pour entretenir vos cheveux au quotidien.",
       prix: "4500 FCFA",
-      image: "image/shampoing-essentielle.png"
+      image: "image/produit-apres-shampoing.jpg"
     },
 
     {
-      nom: "Après-shampoing",
-      description: "Aide à faciliter le démêlage.",
+      nom: "Crème Sans Rinçage",
+      description: "Facile à intégrer dans votre routine pour garder des cheveux souples.",
       prix: "4500 FCFA",
-      image: "image/soin-essentielle.png"
+      image: "image/produit-creme-sans-rincage.jpg"
     }
 
   ]
@@ -1173,7 +1147,7 @@ const catalogue = {
 
 const programmes = {
 
-  "F&N Cuir Chevelu": [
+  "cuir": [
     ["Lundi", "Observer le cuir chevelu et laver doucement si nécessaire."],
     ["Mardi", "Laisser le cuir chevelu au repos."],
     ["Mercredi", "Éviter de gratter et observer les démangeaisons."],
@@ -1182,8 +1156,7 @@ const programmes = {
     ["Samedi", "Entretenir doucement les longueurs."],
     ["Dimanche", "Faire le bilan de la semaine."]
   ],
-
-  "F&N Force & Protection": [
+  "fortification": [
     ["Lundi", "Démêler doucement et protéger les longueurs."],
     ["Mardi", "Laisser les cheveux au repos."],
     ["Mercredi", "Vérifier que les coiffures ne sont pas trop serrées."],
@@ -1193,7 +1166,7 @@ const programmes = {
     ["Dimanche", "Faire le bilan de la semaine."]
   ],
 
-  "F&N Hydratation": [
+  "hydratation": [
     ["Lundi", "Appliquer un soin hydratant sur les longueurs."],
     ["Mardi", "Protéger les cheveux et éviter les manipulations."],
     ["Mercredi", "Rafraîchir les longueurs si nécessaire."],
@@ -1203,7 +1176,7 @@ const programmes = {
     ["Dimanche", "Faire le bilan de la semaine."]
   ],
 
-  "F&N Essentielle": [
+  "essentielle": [
     ["Lundi", "Démêler doucement si nécessaire."],
     ["Mardi", "Laisser les cheveux au repos."],
     ["Mercredi", "Vérifier l'état des cheveux et du cuir chevelu."],
@@ -1217,7 +1190,210 @@ const programmes = {
 
 
 /* ==========================================
-   3. SAUVEGARDE DIAGNOSTIC
+   3. TYPES DE CHEVEUX 1A À 4C
+========================================== */
+
+const descriptionsTypes = {
+  "1A": "raides, très fins",
+  "1B": "raides, avec un peu de volume",
+  "1C": "raides, plus épais",
+  "2A": "avec des ondulations légères",
+  "2B": "avec des ondulations marquées",
+  "2C": "avec des ondulations fortes",
+  "3A": "avec des boucles larges",
+  "3B": "avec des boucles moyennes",
+  "3C": "avec des boucles serrées",
+  "4A": "crépus, avec de petites boucles",
+  "4B": "crépus, en forme de Z",
+  "4C": "crépus, très serrés"
+};
+
+const textesPorosite = {
+  faible: "une porosité faible",
+  moyenne: "une porosité moyenne",
+  forte: "une porosité forte"
+};
+
+const textesDensite = {
+  faible: "une densité faible",
+  moyenne: "une densité moyenne",
+  forte: "une densité forte"
+};
+
+const niveaux = {
+  faible: 1,
+  moyenne: 2,
+  forte: 3
+};
+
+/* Le chiffre (1 à 4) vient de la texture.
+   La lettre (A, B ou C) est estimée avec la porosité
+   et la densité. */
+
+function deduireTypeCheveux(texture, porosite, densite) {
+
+  const familles = {
+    raides: "1",
+    ondules: "2",
+    boucles: "3",
+    crepus: "4"
+  };
+
+  const score =
+    niveaux[porosite] +
+    niveaux[densite];
+
+  let lettre = "B";
+
+  if (score <= 3) {
+    lettre = "A";
+  } else if (score >= 5) {
+    lettre = "C";
+  }
+
+  return familles[texture] + lettre;
+
+}
+
+
+/* ==========================================
+   4. PHOTO (enregistrée dans le navigateur)
+========================================== */
+
+let photoData = "";
+
+function sauvegarderPhoto() {
+
+  try {
+
+    if (photoData) {
+      localStorage.setItem("FN_photo", photoData);
+    }
+
+  } catch (erreur) {
+
+    console.warn(
+      "Sauvegarde de la photo impossible :",
+      erreur
+    );
+
+  }
+
+}
+
+function afficherAperçuPhoto() {
+
+  const preview =
+    document.getElementById("photoPreview");
+
+  const info =
+    document.getElementById("photoInfo");
+
+  if (photoData) {
+
+    preview.src = photoData;
+    preview.style.display = "block";
+    info.style.display = "block";
+
+  } else {
+
+    preview.src = "";
+    preview.style.display = "none";
+    info.style.display = "none";
+
+  }
+
+}
+
+/* Réduit la photo pour qu'elle reste légère
+   et puisse être gardée après actualisation. */
+
+function reduirePhoto(fichier, callback) {
+
+  const lecteur = new FileReader();
+
+  lecteur.onload = function(e) {
+
+    const image = new Image();
+
+    image.onload = function() {
+
+      const tailleMax = 700;
+
+      let largeur = image.width;
+      let hauteur = image.height;
+
+      if (largeur > hauteur && largeur > tailleMax) {
+
+        hauteur = Math.round(hauteur * tailleMax / largeur);
+        largeur = tailleMax;
+
+      } else if (hauteur >= largeur && hauteur > tailleMax) {
+
+        largeur = Math.round(largeur * tailleMax / hauteur);
+        hauteur = tailleMax;
+
+      }
+
+      const canvas =
+        document.createElement("canvas");
+
+      canvas.width = largeur;
+      canvas.height = hauteur;
+
+      canvas
+        .getContext("2d")
+        .drawImage(image, 0, 0, largeur, hauteur);
+
+      callback(
+        canvas.toDataURL("image/jpeg", 0.8)
+      );
+
+    };
+
+    image.onerror = function() {
+      callback(e.target.result);
+    };
+
+    image.src = e.target.result;
+
+  };
+
+  lecteur.readAsDataURL(fichier);
+
+}
+
+document
+  .getElementById("photoCheveux")
+  .addEventListener(
+    "change",
+    function() {
+
+      const fichier = this.files[0];
+
+      if (!fichier) {
+        return;
+      }
+
+      reduirePhoto(
+        fichier,
+        function(resultat) {
+
+          photoData = resultat;
+
+          afficherAperçuPhoto();
+
+          sauvegarderPhoto();
+
+        }
+      );
+
+    }
+  );
+
+
+/* ==========================================
+   5. SAUVEGARDE DIAGNOSTIC
 ========================================== */
 
 function sauvegarderDiagnostic() {
@@ -1246,7 +1422,7 @@ function sauvegarderDiagnostic() {
 
 
 /* ==========================================
-   4. SEMAINE ACTUELLE
+   6. SEMAINE ACTUELLE
 ========================================== */
 
 function obtenirSemaineActuelle() {
@@ -1273,13 +1449,13 @@ function obtenirSemaineActuelle() {
 
 function obtenirCleSuivi() {
 
-  const gamme = window.diagnosticData
-    ? window.diagnosticData.gamme
+  const cle = window.diagnosticData
+    ? window.diagnosticData.cle
     : "F&N";
 
   return (
     "FN_suivi_" +
-    gamme +
+    cle +
     "_" +
     obtenirSemaineActuelle()
   );
@@ -1288,7 +1464,7 @@ function obtenirCleSuivi() {
 
 
 /* ==========================================
-   5. SAUVEGARDE SUIVI
+   7. SAUVEGARDE SUIVI
 ========================================== */
 
 function sauvegarderSuivi() {
@@ -1323,7 +1499,7 @@ function sauvegarderSuivi() {
 
 
 /* ==========================================
-   6. PROGRESSION
+   8. PROGRESSION
 ========================================== */
 
 function mettreAJourProgression() {
@@ -1369,7 +1545,7 @@ function mettreAJourProgression() {
 
 
 /* ==========================================
-   7. RESTAURER SUIVI
+   9. RESTAURER SUIVI
 ========================================== */
 
 function restaurerSuivi() {
@@ -1426,13 +1602,11 @@ function restaurerSuivi() {
   mettreAJourProgression();
 
 }
-
-
 /* ==========================================
-   8. CALENDRIER
+   10. CALENDRIER
 ========================================== */
 
-function afficherCalendrier(gamme) {
+function afficherCalendrier(cle) {
 
   const calendrier =
     document.getElementById(
@@ -1445,7 +1619,7 @@ function afficherCalendrier(gamme) {
     );
 
   const programme =
-    programmes[gamme];
+    programmes[cle];
 
   calendrier.innerHTML = "";
 
@@ -1522,17 +1696,13 @@ function afficherCalendrier(gamme) {
 
   zoneSuivi.style.display = "block";
 
-
-  /* CORRECTION IMPORTANTE :
-     restauration du suivi */
-
   restaurerSuivi();
 
 }
 
 
 /* ==========================================
-   9. REINITIALISER SUIVI
+   11. REINITIALISER SUIVI
 ========================================== */
 
 function reinitialiserSuivi() {
@@ -1580,63 +1750,24 @@ function reinitialiserSuivi() {
 
 
 /* ==========================================
-   10. APERÇU PHOTO
+   12. FAIRE LE DIAGNOSTIC
 ========================================== */
 
-document
-  .getElementById("photoCheveux")
-  .addEventListener(
-    "change",
-    function() {
+function faireDiagnostic(defilement) {
 
-      const fichier =
-        this.files[0];
-
-      const preview =
-        document.getElementById(
-          "photoPreview"
-        );
-
-      if (!fichier) {
-
-        preview.style.display =
-          "none";
-
-        preview.src = "";
-
-        return;
-
-      }
-
-      const lecteur =
-        new FileReader();
-
-      lecteur.onload =
-        function(e) {
-
-          preview.src =
-            e.target.result;
-
-          preview.style.display =
-            "block";
-
-        };
-
-      lecteur.readAsDataURL(fichier);
-
-    }
-  );
-
-
-/* ==========================================
-   11. FAIRE LE DIAGNOSTIC
-========================================== */
-
-function faireDiagnostic() {
-
-  const type =
+  const porosite =
     document.querySelector(
-      'input[name="type"]:checked'
+      'input[name="porosite"]:checked'
+    );
+
+  const densite =
+    document.querySelector(
+      'input[name="densite"]:checked'
+    );
+
+  const texture =
+    document.querySelector(
+      'input[name="texture"]:checked'
     );
 
   const secheresse =
@@ -1654,16 +1785,39 @@ function faireDiagnostic() {
       'input[name="lavage"]:checked'
     );
 
-  const photo =
-    document.getElementById(
-      "photoCheveux"
-    );
 
+  /* PHOTO OBLIGATOIRE */
 
-  if (!type || !secheresse || !probleme) {
+  if (!photoData) {
 
     alert(
-      "Veuillez choisir votre type de cheveux, " +
+      "La photo de vos cheveux est obligatoire. " +
+      "Veuillez en ajouter une pour voir votre diagnostic."
+    );
+
+    document
+      .getElementById("photoCheveux")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    return;
+
+  }
+
+
+  if (
+    !porosite ||
+    !densite ||
+    !texture ||
+    !secheresse ||
+    !probleme
+  ) {
+
+    alert(
+      "Veuillez répondre aux questions sur la porosité, " +
+      "la densité et la texture de vos cheveux, " +
       "indiquer s'ils sont secs et sélectionner " +
       "votre problème principal."
     );
@@ -1673,8 +1827,14 @@ function faireDiagnostic() {
   }
 
 
-  const typeCheveux =
-    type.value;
+  const valeurPorosite =
+    porosite.value;
+
+  const valeurDensite =
+    densite.value;
+
+  const valeurTexture =
+    texture.value;
 
   const besoinSecheresse =
     secheresse.value;
@@ -1688,10 +1848,33 @@ function faireDiagnostic() {
       : "Non précisée";
 
 
+  /* TYPE DE CHEVEUX (1A à 4C) */
+
+  const typeCheveux =
+    deduireTypeCheveux(
+      valeurTexture,
+      valeurPorosite,
+      valeurDensite
+    );
+
+  const descriptionType =
+    "D'après vos réponses, vos cheveux sont de type " +
+    typeCheveux +
+    " (" +
+    descriptionsTypes[typeCheveux] +
+    "), avec " +
+    textesPorosite[valeurPorosite] +
+    " et " +
+    textesDensite[valeurDensite] +
+    ". Les besoins dépendent également de l'état de vos cheveux et de votre cuir chevelu.";
+
+
   let besoin = "";
-  let nomGamme = "";
+  let cleBesoin = "";
   let descriptionGamme = "";
   let routine = [];
+
+  const nomGamme = "Gamme F&N";
 
 
   /* PELLICULES */
@@ -1704,11 +1887,11 @@ function faireDiagnostic() {
     besoin =
       "Soin du cuir chevelu";
 
-    nomGamme =
-      "F&N Cuir Chevelu";
+    cleBesoin =
+      "cuir";
 
     descriptionGamme =
-      "Une routine douce destinée à prendre soin du cuir chevelu.";
+      "Des produits doux destinés à prendre soin du cuir chevelu.";
 
     routine = [
 
@@ -1731,6 +1914,7 @@ function faireDiagnostic() {
 
   }
 
+
   /* CASSE / CHUTE */
 
   else if (
@@ -1741,11 +1925,11 @@ function faireDiagnostic() {
     besoin =
       "Renforcement et protection";
 
-    nomGamme =
-      "F&N Force & Protection";
+    cleBesoin =
+      "fortification";
 
     descriptionGamme =
-      "Une routine douce pour protéger les longueurs et limiter la casse.";
+      "Des produits doux pour protéger les longueurs et limiter la casse.";
 
     routine = [
 
@@ -1779,11 +1963,11 @@ function faireDiagnostic() {
     besoin =
       "Hydratation et nutrition";
 
-    nomGamme =
-      "F&N Hydratation";
+    cleBesoin =
+      "hydratation";
 
     descriptionGamme =
-      "Une routine destinée à aider les cheveux secs à conserver leur souplesse.";
+      "Des produits destinés à aider les cheveux secs à conserver leur souplesse.";
 
     routine = [
 
@@ -1814,11 +1998,11 @@ function faireDiagnostic() {
     besoin =
       "Entretien quotidien";
 
-    nomGamme =
-      "F&N Essentielle";
+    cleBesoin =
+      "essentielle";
 
     descriptionGamme =
-      "Une routine simple pour entretenir vos cheveux.";
+      "Des produits simples pour entretenir vos cheveux.";
 
     routine = [
 
@@ -1848,9 +2032,17 @@ function faireDiagnostic() {
 
     type: typeCheveux,
 
+    porosite: valeurPorosite,
+
+    densite: valeurDensite,
+
+    texture: valeurTexture,
+
     besoin: besoin,
 
     gamme: nomGamme,
+
+    cle: cleBesoin,
 
     secheresse: besoinSecheresse,
 
@@ -1861,6 +2053,8 @@ function faireDiagnostic() {
   };
 
   sauvegarderDiagnostic();
+
+  sauvegarderPhoto();
 
 
   /* RESULTAT */
@@ -1875,9 +2069,7 @@ function faireDiagnostic() {
   document.getElementById(
     "descriptionResultat"
   ).textContent =
-    "Vous avez sélectionné le type " +
-    typeCheveux +
-    ". Les besoins dépendent également de l'état de vos cheveux et de votre cuir chevelu.";
+    descriptionType;
 
 
   document.getElementById(
@@ -1889,7 +2081,7 @@ function faireDiagnostic() {
   document.getElementById(
     "nomGamme"
   ).textContent =
-    nomGamme;
+    nomGamme + " : " + besoin;
 
 
   document.getElementById(
@@ -1901,8 +2093,8 @@ function faireDiagnostic() {
   document.getElementById(
     "titreCatalogue"
   ).textContent =
-    "Produits de la gamme " +
-    nomGamme;
+    "Produits F&N pour votre besoin : " +
+    besoin;
 
 
   /* ROUTINE */
@@ -1955,7 +2147,7 @@ function faireDiagnostic() {
     );
 
   const produits =
-    catalogue[nomGamme] || [];
+    catalogue[cleBesoin] || [];
 
   zoneProduits.innerHTML = "";
 
@@ -2057,59 +2249,17 @@ function faireDiagnostic() {
       "photoResultat"
     );
 
+  photoResultat.src =
+    photoData;
 
-  photoResultat.onerror =
-    function() {
-
-      this.style.display =
-        "none";
-
-    };
-
-
-  if (
-    photo &&
-    photo.files &&
-    photo.files[0]
-  ) {
-
-    const lecteur =
-      new FileReader();
-
-    lecteur.onload =
-      function(e) {
-
-        photoResultat.src =
-          e.target.result;
-
-        photoResultat.style.display =
-          "block";
-
-      };
-
-    lecteur.readAsDataURL(
-      photo.files[0]
-    );
-
-  }
-
-  else {
-
-    photoResultat.src =
-      "image/" +
-      typeCheveux +
-      ".png";
-
-    photoResultat.style.display =
-      "block";
-
-  }
+  photoResultat.style.display =
+    "block";
 
 
   /* SUIVI */
 
   afficherCalendrier(
-    nomGamme
+    cleBesoin
   );
 
 
@@ -2124,23 +2274,27 @@ function faireDiagnostic() {
     "block";
 
 
-  setTimeout(
-    function() {
+  if (defilement) {
 
-      resultat.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+    setTimeout(
+      function() {
 
-    },
-    100
-  );
+        resultat.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      },
+      100
+    );
+
+  }
 
 }
 
 
 /* ==========================================
-   12. WHATSAPP
+   13. WHATSAPP
 ========================================== */
 
 function commanderWhatsApp(
@@ -2170,6 +2324,14 @@ function commanderWhatsApp(
     diagnostic.type +
     "\n" +
 
+    "Porosité : " +
+    diagnostic.porosite +
+    "\n" +
+
+    "Densité : " +
+    diagnostic.densite +
+    "\n" +
+
     "Cheveux secs : " +
     diagnostic.secheresse +
     "\n" +
@@ -2184,10 +2346,6 @@ function commanderWhatsApp(
 
     "Besoin identifié : " +
     diagnostic.besoin +
-    "\n" +
-
-    "Gamme recommandée : " +
-diagnostic.gamme +
     "\n";
 
 
@@ -2225,7 +2383,8 @@ diagnostic.gamme +
 
 
 /* ==========================================
-   13. REFAIRE DIAGNOSTIC
+   14. REFAIRE DIAGNOSTIC
+   (efface aussi la photo enregistrée)
 ========================================== */
 
 function refaireDiagnostic() {
@@ -2234,6 +2393,10 @@ function refaireDiagnostic() {
 
     localStorage.removeItem(
       "FN_diagnostic"
+    );
+
+    localStorage.removeItem(
+      "FN_photo"
     );
 
   } catch (erreur) {
@@ -2260,20 +2423,7 @@ function refaireDiagnostic() {
     );
 
 
-  document
-    .querySelectorAll(
-      ".carte-type"
-    )
-    .forEach(
-      function(carte) {
-
-        carte.classList.remove(
-          "selectionnee"
-        );
-
-      }
-    );
-
+  photoData = "";
 
   const fichier =
     document.getElementById(
@@ -2287,21 +2437,7 @@ function refaireDiagnostic() {
 
   }
 
-
-  const preview =
-    document.getElementById(
-      "photoPreview"
-    );
-
-  if (preview) {
-
-    preview.src =
-      "";
-
-    preview.style.display =
-      "none";
-
-  }
+  afficherAperçuPhoto();
 
 
   document.getElementById(
@@ -2371,58 +2507,8 @@ function refaireDiagnostic() {
 
 
 /* ==========================================
-   14. SELECTION TYPES
-========================================== */
-
-document
-  .querySelectorAll(
-    'input[name="type"]'
-  )
-  .forEach(
-    function(input) {
-
-      input.addEventListener(
-        "change",
-        function() {
-
-          document
-            .querySelectorAll(
-              ".carte-type"
-            )
-            .forEach(
-              function(carte) {
-
-                carte.classList.remove(
-                  "selectionnee"
-                );
-
-              }
-            );
-
-
-          const carteSelectionnee =
-            input.closest(
-              ".carte-type"
-            );
-
-
-          if (carteSelectionnee) {
-
-            carteSelectionnee.classList.add(
-              "selectionnee"
-            );
-
-          }
-
-        }
-      );
-
-    }
-  );
-
-
-/* ==========================================
-   15. RESTAURER DIAGNOSTIC
+   15. RESTAURER PHOTO ET DIAGNOSTIC
+   (au chargement ou après actualisation)
 ========================================== */
 
 window.addEventListener(
@@ -2430,6 +2516,25 @@ window.addEventListener(
   function() {
 
     try {
+
+      /* Photo */
+
+      const photoSauvegardee =
+        localStorage.getItem(
+          "FN_photo"
+        );
+
+      if (photoSauvegardee) {
+
+        photoData =
+          photoSauvegardee;
+
+        afficherAperçuPhoto();
+
+      }
+
+
+      /* Diagnostic */
 
       const sauvegarde =
         localStorage.getItem(
@@ -2450,7 +2555,9 @@ window.addEventListener(
 
       if (
         !diagnostic ||
-        !diagnostic.type
+        !diagnostic.porosite ||
+        !diagnostic.densite ||
+        !diagnostic.texture
       ) {
 
         return;
@@ -2460,8 +2567,14 @@ window.addEventListener(
 
       const reponses = {
 
-        type:
-          diagnostic.type,
+        porosite:
+          diagnostic.porosite,
+
+        densite:
+          diagnostic.densite,
+
+        texture:
+          diagnostic.texture,
 
         secheresse:
           diagnostic.secheresse,
@@ -2480,16 +2593,12 @@ window.addEventListener(
       ).forEach(
         function(nom) {
 
-          const valeur =
-            reponses[nom];
-
-
           const champ =
             document.querySelector(
               'input[name="' +
               nom +
               '"][value="' +
-              valeur +
+              reponses[nom] +
               '"]'
             );
 
@@ -2499,41 +2608,32 @@ window.addEventListener(
             champ.checked =
               true;
 
-
-            if (
-              nom ===
-              "type"
-            ) {
-
-              const carte =
-                champ.closest(
-                  ".carte-type"
-                );
-
-
-              if (carte) {
-
-                carte.classList.add(
-                  "selectionnee"
-                );
-
-              }
-
-            }
-
           }
 
         }
       );
 
 
-      faireDiagnostic();
+      /* Réaffiche le résultat si tout est présent */
+
+      if (
+        photoData &&
+        document.querySelector('input[name="porosite"]:checked') &&
+        document.querySelector('input[name="densite"]:checked') &&
+        document.querySelector('input[name="texture"]:checked') &&
+        document.querySelector('input[name="secheresse"]:checked') &&
+        document.querySelector('input[name="probleme"]:checked')
+      ) {
+
+        faireDiagnostic(false);
+
+      }
 
 
     } catch (erreur) {
 
       console.error(
-        "Erreur de restauration du diagnostic :",
+        "Erreur de restauration :",
         erreur
       );
 
@@ -2542,7 +2642,7 @@ window.addEventListener(
   }
 );
 
-</script></body>
+</script>
+
+</body>
 </html>
-
-
