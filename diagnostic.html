@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagnostic capillaire - ING-aura</title>
+  <title>Diagnostic capillaire - Ing-Aura</title>
 
   <style>
     :root {
@@ -578,7 +578,7 @@
       }
 
       .logo {
-        width: 100%;
+        width: 200%;
         text-align: center;
       }
 
@@ -664,7 +664,7 @@
 <body>
 
 <header>
-  <div class="logo">F&N</div>
+  <div class="logo">Ing-Aura</div>
 
   <nav>
     <a href="index.html">Accueil</a>
@@ -1396,7 +1396,7 @@ function sauvegarderDiagnostic() {
     if (window.diagnosticData) {
 
       localStorage.setItem(
-        "FN_diagnostic",
+        "Ing-Aura_diagnostic",
         JSON.stringify(window.diagnosticData)
       );
 
@@ -1444,7 +1444,7 @@ function obtenirCleSuivi() {
 
   const cle = window.diagnosticData
     ? window.diagnosticData.cle
-    : "F&N";
+    : "Ing-Aura";
 
   return (
     "Ing-Aura_suivi_" +
@@ -2513,7 +2513,7 @@ window.addEventListener(
 
       const photoSauvegardee =
         localStorage.getItem(
-          "FN_photo"
+          "Ing-Aura_photo"
         );
 
       if (photoSauvegardee) {
@@ -2530,7 +2530,7 @@ window.addEventListener(
 
       const sauvegarde =
         localStorage.getItem(
-          "FN_diagnostic"
+          "Ing-Aura_diagnostic"
         );
 
 
