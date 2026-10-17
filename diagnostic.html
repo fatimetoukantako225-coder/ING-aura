@@ -57,12 +57,46 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     }
 
-    .logo {
-      font-size: 27px;
-      font-weight: bold;
-      color: var(--violet);
-      letter-spacing: 1px;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@600&display=swap');
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #8b4a6b; /* remplace par la couleur principale de ton site */
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.brand-text {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1;
+}
+
+.brand-ing {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+.brand-aura {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 600px) {
+  .brand-icon { width: 30px; height: 30px; }
+  .brand-ing { font-size: 1.1rem; }
+  .brand-aura { font-size: 1.35rem; }
+}
 
     nav {
       display: flex;
@@ -664,7 +698,15 @@
 <body>
 
 <header>
-  <div class="logo">Ing Aura</div>
+  <a href="index.html" class="brand" aria-label="Ing Aura - Accueil">
+  <svg class="brand-icon" viewBox="0 0 40 40" aria-hidden="true">
+    <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M20 8c-4 6-4 10 0 14s4 8 0 10c6-2 8-8 5-13-2-4-3-7-5-11z" fill="currentColor"/>
+  </svg>
+  <span class="brand-text">
+    <span class="brand-ing">ING</span><span class="brand-aura">aura</span>
+  </span>
+  </a>
 
   <nav>
     <a href="index.html">Accueil</a>
