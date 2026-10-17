@@ -64,13 +64,10 @@ vos cheveux.">
  align-items: center;
  gap: 20px;
  }
- .logo {
- font-size: 29px;
- font-weight: bold;
- color: var(--violet);
- letter-spacing: 2px;
- line-height: 1;
- }
+ .logo img {
+ height: 58px;
+ width: auto;
+  }
  .logo span {
  display: block;
  font-size: 9px;
@@ -347,7 +344,8 @@ ING aura • Code source • Page 39
  .engagement-grid {
 display: grid;
  grid-template-columns: repeat(3, 1fr);
- gap: 25px;
+ gap: 25px;
+
  }
  .engagement {
  background: white;
@@ -431,7 +429,8 @@ display: grid;
  }
  .nav-links {
  gap: 12px;
- flex-wrap: wrap; justify-content: center;
+ flex-wrap: wrap; justify-content: center;
+
  }
  .nav-links a {
  font-size: 12px;
@@ -509,9 +508,9 @@ display: grid;
  ========================= -->
  <header>
  <nav>
- <a href="index.html" class="logo" aria-label="Accueil Ing Aura">
- Ing Aura <span>HAIRCARE</span>
- </a>
+  <div class="logo img">
+  <img src="image/logo-ia-entete-texte.png" alt="logo Ing Aura">
+  </div>
  <div class="nav-links">
  <a href="index.html">Accueil</a>
  <a href="diagnostic.html">Diagnostic</a>
@@ -525,9 +524,7 @@ display: grid;
  ========================= -->
  <section class="hero">
  <div class="hero-content">
- <div class="eyebrow">
- Ing Aura 
- </div>
+ 
  <h1>
  Révélez la beauté naturelle de vos cheveux
  </h1>
@@ -604,7 +601,8 @@ display: grid;
  Découvrir
  </a>
  </div>
- </div>
+ </div>
+
  </article>
  <!-- HYDRATATION : MASQUE -->
  <article class="gamme-card" data-category="hydratation">
@@ -707,7 +705,8 @@ display: grid;
  Découvrir
  </a>
  </div>
- </div>
+ </div>
+
  </article>
  <!-- CUIR CHEVELU : LOTION -->
  <article class="gamme-card" data-category="cuir">
@@ -784,7 +783,8 @@ display: grid;
  onclick="commander('la Crème Sans Rinçage Ing Aura')"> Découvrir
  </a>
  </div>
- </div>
+ </div>
+
  </article>
  </div>
  </main>
@@ -859,7 +859,8 @@ display: grid;
  <div class="footer-logo">Ing Aura</div>
  <p>
  Haircare — Prenez soin de vos cheveux, naturellement et avec douceur.
- </p>
+ </p>
+
  </div>
  <div>
  <h4>Navigation</h4>
