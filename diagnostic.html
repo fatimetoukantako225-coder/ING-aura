@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagnostic capillaire - Ing-Aura</title>
+  <title>Diagnostic capillaire - Ing Aura</title>
 
   <style>
     :root {
@@ -664,7 +664,7 @@
 <body>
 
 <header>
-  <div class="logo">Ing-Aura</div>
+  <div class="logo">Ing Aura</div>
 
   <nav>
     <a href="index.html">Accueil</a>
@@ -673,10 +673,10 @@
   </nav>
 </header>
 <main class="diagnostic">
-  <h1>Diagnostic capillaire Ing-Aura</h1>
+  <h1>Diagnostic capillaire Ing Aura</h1>
   <p class="intro">
     Répondez à quelques questions pour découvrir les besoins
-    de vos cheveux et obtenir une routine Ing-Aura adaptée.
+    de vos cheveux et obtenir une routine Ing Aura adaptée.
   </p>
   <!-- PHOTO -->
   <div class="photo">
@@ -892,7 +892,7 @@
         ✨ Diagnostic personnalisé
       </span>
 
-      <h2>Votre diagnostic Ing-Aura</h2>
+      <h2>Votre diagnostic Ing Aura</h2>
 
       <div class="resultat-photo">
         <img
@@ -929,7 +929,7 @@
     <div class="gamme">
 
       <span class="badge-resultat">
-        🌸 Votre gamme Ing-Aura
+        🌸 Votre gamme Ing Aura
       </span>
 
       <h2 id="nomGamme"></h2>
@@ -985,7 +985,7 @@
       style="display:none"
     >
 
-      <h3>🌸 Mon suivi capillaire Ing-Aura</h3>
+      <h3>🌸 Mon suivi capillaire Ing Aura</h3>
 
       <p class="suivi-intro">
         Voici votre programme de soins sur 7 jours.
@@ -1140,10 +1140,10 @@ const catalogue = {
 const programmes = {
 
   "cuir": [
-    ["Lundi", "Observer le cuir chevelu et laver doucement si nécessaire."],
+    ["Lundi", "Observer le cuir chevelu et laver doucement."],
     ["Mardi", "Laisser le cuir chevelu au repos."],
     ["Mercredi", "Éviter de gratter et observer les démangeaisons."],
-    ["Jeudi", "Laver si nécessaire avec un produit adapté."],
+    ["Jeudi", "Laver avec un produit adapté."],
     ["Vendredi", "Laisser le cuir chevelu au repos."],
     ["Samedi", "Entretenir doucement les longueurs."],
     ["Dimanche", "Faire le bilan de la semaine."]
@@ -1155,22 +1155,22 @@ const programmes = {
     ["Mercredi", "Vérifier que les coiffures ne sont pas trop serrées."],
     ["Jeudi", "Démêler délicatement si nécessaire."],
     ["Vendredi", "Laisser les cheveux au repos."],
-    ["Samedi", "Faire un soin après-shampoing si besoin."],
+    ["Samedi", "Faire un soin après-shampoing ."],
     ["Dimanche", "Faire le bilan de la semaine."]
   ],
 
   "hydratation": [
     ["Lundi", "Appliquer un soin hydratant sur les longueurs."],
     ["Mardi", "Protéger les cheveux et éviter les manipulations."],
-    ["Mercredi", "Rafraîchir les longueurs si nécessaire."],
+    ["Mercredi", "Rafraîchir les longueurs ."],
     ["Jeudi", "Laisser les cheveux au repos."],
-    ["Vendredi", "Appliquer un soin sans rinçage si besoin."],
-    ["Samedi", "Faire un shampoing et un après-shampoing si nécessaire."],
+    ["Vendredi", "Appliquer un soin sans rinçage ."],
+    ["Samedi", "Faire un shampoing et un après-shampoing ."],
     ["Dimanche", "Faire le bilan de la semaine."]
   ],
 
   "essentielle": [
-    ["Lundi", "Démêler doucement si nécessaire."],
+    ["Lundi", "Démêler doucement ."],
     ["Mardi", "Laisser les cheveux au repos."],
     ["Mercredi", "Vérifier l'état des cheveux et du cuir chevelu."],
     ["Jeudi", "Protéger les longueurs."],
@@ -1260,7 +1260,7 @@ function sauvegarderPhoto() {
   try {
 
     if (photoData) {
-      localStorage.setItem("FN_photo", photoData);
+      localStorage.setItem("Ing_Aura_photo", photoData);
     }
 
   } catch (erreur) {
@@ -1396,7 +1396,7 @@ function sauvegarderDiagnostic() {
     if (window.diagnosticData) {
 
       localStorage.setItem(
-        "Ing-Aura_diagnostic",
+        "Ing_Aura_diagnostic",
         JSON.stringify(window.diagnosticData)
       );
 
@@ -1444,10 +1444,10 @@ function obtenirCleSuivi() {
 
   const cle = window.diagnosticData
     ? window.diagnosticData.cle
-    : "Ing-Aura";
+    : "Ing Aura";
 
   return (
-    "Ing-Aura_suivi_" +
+    "Ing_Aura_suivi_" +
     cle +
     "_" +
     obtenirSemaineActuelle()
@@ -1866,7 +1866,7 @@ function faireDiagnostic(defilement) {
   let descriptionGamme = "";
   let routine = [];
 
-  const nomGamme = "Gamme F&N";
+  const nomGamme = "Gamme Ing Aura";
 
 
   /* PELLICULES */
@@ -2085,7 +2085,7 @@ function faireDiagnostic(defilement) {
   document.getElementById(
     "titreCatalogue"
   ).textContent =
-    "Produits F&N pour votre besoin : " +
+    "Produits Ing Aura pour votre besoin : " +
     besoin;
 
 
@@ -2309,7 +2309,7 @@ function commanderWhatsApp(
 
 
   let message =
-    "Bonjour Ing-Aura !\n\n" +
+    "Bonjour Ing Aura !\n\n" +
     "Je viens de faire mon diagnostic capillaire.\n\n" +
 
     "Mon type de cheveux : " +
@@ -2384,11 +2384,11 @@ function refaireDiagnostic() {
   try {
 
     localStorage.removeItem(
-      "Ing-Aura_diagnostic"
+      "Ing_Aura_diagnostic"
     );
 
     localStorage.removeItem(
-      "Ing-Aura_photo"
+      "Ing_Aura_photo"
     );
 
   } catch (erreur) {
@@ -2513,7 +2513,7 @@ window.addEventListener(
 
       const photoSauvegardee =
         localStorage.getItem(
-          "Ing-Aura_photo"
+          "Ing_Aura_photo"
         );
 
       if (photoSauvegardee) {
@@ -2530,7 +2530,7 @@ window.addEventListener(
 
       const sauvegarde =
         localStorage.getItem(
-          "Ing-Aura_diagnostic"
+          "Ing_Aura_diagnostic"
         );
 
 
